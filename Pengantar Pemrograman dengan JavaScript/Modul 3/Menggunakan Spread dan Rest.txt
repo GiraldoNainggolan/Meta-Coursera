@@ -1,0 +1,77 @@
+Dalam bacaan ini, Anda akan mempelajari cara menggabungkan array, objek menggunakan operator rest. Anda juga akan menemukan cara menggunakan operator spread to:
+
+ Menambahkan anggota baru ke array tanpa menggunakan metode push(),
+
+Mengonversi string menjadi larik dan
+
+Menyalin objek atau larik ke dalam objek terpisah 
+
+Ingatlah bahwa metode push() dan pop() digunakan untuk menambah dan menghapus item dari akhir larik.
+Menggabungkan larik, objek menggunakan operator sisa
+Dengan menggunakan operator sebar, mudah untuk menggabungkan larik:
+
+1234
+const fruits = ['apple', 'pear', 'plum']
+const berries = ['blueberry', 'strawberry']
+const fruitsAndBerries = [...fruits, ...berries] // concatenate
+console.log(fruitsAndBerries); // outputs a single array
+Inilah hasilnya:  
+
+1
+['apple', 'pear', 'plum', 'blueberry', 'strawberry']
+Menggabungkan objek juga mudah dilakukan:  
+
+1234
+const flying = { wings: 2 }
+const car = { wheels: 4 }
+const flyingCar = {...flying, ...car}
+console.log(flyingCar) // {wings: 2, wheels: 4}
+Menambahkan anggota baru ke larik tanpa menggunakan metodepush()
+Berikut cara menggunakan operator sebar untuk menambahkan satu atau beberapa anggota dengan mudah ke larik yang sudah ada:
+
+1234
+let veggies = ['onion', 'parsley'];
+veggies = [...veggies, 'carrot', 'beetroot'];
+console.log(veggies);
+
+Inilah hasilnya:
+
+1
+['onion', 'parsley', 'carrot', 'beetroot']
+Mengonversi string menjadi larik menggunakan operator sebar
+Diberikan sebuah string, mudah untuk menyebarkannya ke dalam item larik yang terpisah:
+
+123
+const greeting = "Hello";
+const arrayOfChars = [...greeting];
+console.log(arrayOfChars); //  ['H', 'e', 'l', 'l', 'o']
+Menyalin objek atau larik ke dalam larik terpisah
+Berikut cara menyalin objek menjadi objek yang benar-benar terpisah, menggunakan operator spread.
+
+123456789
+const car1 = {
+    speed: 200,
+    color: 'yellow'
+}
+const car 2 = {...car1}
+
+car1.speed = 201
+
+console.log(car1.speed, car2.speed)
+Outputnya adalah201, 200.
+
+Anda dapat menyalin larik menjadi larik yang benar-benar terpisah, juga menggunakan operator spread, seperti ini:
+
+1234
+const fruits1 = ['apples', 'pears']
+const fruits2 = [...fruits1]
+fruits1.pop()
+console.log(fruits1, "not", fruits2)
+Kali ini, keluarannya adalah:
+
+1
+['apples'] 'not' ['apples','pears']
+Perhatikan bahwa operator spread hanya melakukan penyalinan dangkal dari larik atau objek sumber. Untuk informasi lebih lanjut mengenai hal ini, silakan lihat bacaan tambahan.
+
+Masih banyak lagi trik yang dapat Anda lakukan dengan operator spread. Beberapa di antaranya sangat berguna ketika Anda mulai bekerja dengan library seperti React.
+

@@ -1,0 +1,31 @@
+React membangun representasi dari Document Object Model atau DOM peramban di dalam memori yang disebut dengan DOM virtual. Ketika komponen diperbarui, React akan memeriksa apakah kode HTML komponen dalam DOM virtual cocok dengan DOM browser. Jika diperlukan perubahan, DOM peramban akan diperbarui. Jika tidak ada yang berubah, maka tidak ada pembaruan yang dilakukan.
+
+Seperti yang Anda ketahui, ini disebut prosesrekonsiliasi dan dapat dibagi menjadi beberapa langkah berikut ini:
+
+Langkah 1: DOM virtual diperbarui.
+
+Langkah 2: DOM virtual dibandingkan dengan versi DOM virtual sebelumnya dan memeriksa elemen mana yang telah berubah.
+
+Langkah 3: Elemen yang berubah diperbarui di DOM browser.
+
+Langkah 4: Halaman web yang ditampilkan diperbarui agar sesuai dengan DOM browser.
+
+Karena memperbarui DOM browser dapat menjadi operasi yang lambat, proses ini membantu mengurangi jumlah pembaruan pada DOM browser dengan hanya memperbarui ketika diperlukan.
+
+Tetapi bahkan dengan proses ini, jika banyak elemen yang diperbarui oleh sebuah event, mendorong pembaruan ke DOM browser masih dapat menjadi mahal dan menyebabkan kinerja yang lambat pada aplikasi web.
+
+Tim React menginvestasikan bertahun-tahun penelitian untuk memecahkan masalah ini. Hasil dari penelitian tersebut adalah apa yang dikenal sebagai React Fiber Architecture.
+
+Arsitektur Fiber memungkinkan React untuk merender halaman web secara bertahap. Artinya, alih-alih langsung memperbarui DOM browser dengan semua perubahan DOM virtual, React dapat menyebarkan pembaruan dari waktu ke waktu. Tetapi apa yang dimaksud dengan "dari waktu ke waktu"?
+
+Bayangkan sebuah halaman web yang sangat panjang di dalam peramban web. Jika pengguna menggulir ke bagian bawah, bagian atas halaman web tidak lagi terlihat. Pengguna kemudian mengklik tombol di bagian bawah halaman web yang memperbarui beberapa teks di bagian atas halaman web.
+
+Tetapi bagian atas halaman tidak terlihat. Oleh karena itu, mengapa harus segera memperbaruinya?
+
+Mungkin ada teks yang sedang ditampilkan di bagian bawah halaman yang juga diperbarui apabila tombol diklik. Bukankah itu akan menjadi prioritas yang lebih tinggi untuk diperbarui daripada teks yang tidak terlihat?
+
+Ini adalah prinsip dari Arsitektur React Fiber. React dapat mengoptimalkan kapan dan di mana pembaruan terjadi pada DOM browser untuk secara signifikan meningkatkan performa aplikasi dan responsif terhadap input pengguna. Anggap saja ini sebagai sistem prioritas. Perubahan dengan prioritas tertinggi, yaitu elemen-elemen yang terlihat oleh pengguna, akan diperbarui terlebih dahulu. Sementara perubahan dengan prioritas yang lebih rendah, yaitu elemen yang saat ini tidak ditampilkan, akan diperbarui kemudian.
+
+Meskipun Anda tidak mungkin berinteraksi dengan DOM virtual dan Arsitektur Fiber secara langsung, ada baiknya Anda mengetahui apa yang terjadi jika ada masalah yang terjadi selama pengembangan aplikasi web Anda.
+
+Ada banyak alat yang tersedia untuk membantu Anda menyelidiki bagaimana React memproses halaman web Anda. Plugin web browser resmi React Developer Tools yang dikembangkan oleh Meta akan menjadi salah satu alat utama dalam kotak peralatan pengembang Anda. Jadi, jika Anda harus melihat lebih dalam ke dalam kode, Anda akan memiliki toolbox yang tepat untuk membantu Anda. Alat-alat ini akan dieksplorasi nanti. 

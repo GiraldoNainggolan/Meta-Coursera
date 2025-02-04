@@ -1,0 +1,54 @@
+Ada banyak kerangka kerja Model-View-Controller (MVC) JavaScript di luar sana. Mengapa kami membuat React dan mengapa Anda ingin menggunakannya?
+
+React bukanlah framework MVC.
+React adalah sebuah library untuk membangun antarmuka pengguna yang dapat dikomposisikan. React mendorong pembuatan komponen UI yang dapat digunakan kembali yang menyajikan data yang berubah seiring berjalannya waktu.
+
+React tidak menggunakan template.
+Secara tradisional, UI aplikasi web dibangun menggunakan template atau arahan HTML. Templat-templat ini mendikte serangkaian abstraksi lengkap yang dapat Anda gunakan untuk membangun UI Anda.
+
+React melakukan pendekatan untuk membangun antarmuka pengguna secara berbeda dengan memecahnya menjadi beberapakomponen. Ini berarti React menggunakan bahasa pemrograman yang nyata dan berfitur lengkap untuk merender tampilan, yang kita lihat sebagai keunggulan dibandingkan template karena beberapa alasan:
+
+JavaScript adalah bahasa pemrograman yang fleksibel dan kuat dengan kemampuan untuk membangun abstraksi. Hal ini sangat penting dalam aplikasi yang besar.
+
+Dengan menyatukan markup Anda dengan logika view yang sesuai, React dapat membuat view lebih mudah untuk dikembangkan dan dipelihara.
+
+Dengan menyatukan pemahaman tentang markup dan konten ke dalam JavaScript, tidak ada penggabungan string secara manual sehingga mengurangi kerentanan XSS.
+
+Kami juga telah membuat
+JSX
+, sebuah ekstensi sintaksis opsional, jika Anda lebih menyukai keterbacaan HTML daripada JavaScript mentah.
+
+Pembaruan React sangat sederhana.
+React benar-benar bersinar ketika data Anda berubah dari waktu ke waktu.
+
+Pada aplikasi JavaScript tradisional, Anda perlu melihat data apa saja yang berubah dan secara imperatif membuat perubahan pada DOM agar tetap mutakhir. Bahkan AngularJS, yang menyediakan antarmuka deklaratif melalui arahan dan pengikatan data
+membutuhkan fungsi penautan untuk memperbarui node DOM secara manual
+.
+
+React mengambil pendekatan yang berbeda.
+
+Ketika komponen Anda pertama kali diinisialisasi, metoderender dipanggil, menghasilkan representasi ringan dari tampilan Anda. Dari representasi tersebut, sebuah string markup dihasilkan dan disuntikkan ke dalam dokumen. Ketika data Anda berubah, metoderender dipanggil lagi. Untuk melakukan pembaruan seefisien mungkin, kami membedakan nilai yang dikembalikan dari pemanggilan sebelumnya kerender dengan nilai yang baru dan menghasilkan sekumpulan perubahan minimal yang akan diterapkan pada DOM.
+
+Data yang dikembalikan darirender bukanlah sebuah string atau simpul DOM - ini adalah deskripsi ringan tentang seperti apa tampilan DOM.
+
+Kami menyebut proses ini sebagairekonsiliasi. Lihat
+jsFiddle ini
+ untuk melihat contoh rekonsiliasi yang sedang bekerja.
+
+Karena proses render ulang ini sangat cepat (sekitar 1ms untuk TodoMVC), pengembang tidak perlu secara eksplisit menentukan binding data. Kami menemukan bahwa pendekatan ini mempermudah pembuatan aplikasi.
+
+HTML hanyalah permulaan.
+Karena React memiliki representasi dokumen yang ringan, kita dapat melakukan beberapa hal yang sangat keren dengannya:
+
+Facebook memiliki grafik dinamis yang dirender ke <canvas> , bukan HTML.
+
+Instagram adalah aplikasi web "halaman tunggal" yang dibangun sepenuhnya dengan React dan Backbone.Router. Para desainer secara teratur memberikan kontribusi kode React dengan JSX.
+
+Kami telah membuat prototipe internal yang menjalankan aplikasi React di dalam sebuah web worker dan menggunakan React untuk menggerakkan tampilan native iOS melalui jembatan Objective-C.
+
+Anda dapat menjalankan React di server untuk SEO, performa, berbagi kode dan fleksibilitas secara keseluruhan.
+
+Event berperilaku dengan cara yang konsisten dan sesuai dengan standar di semua browser (termasuk IE8) dan secara otomatis menggunakan pendelegasian event.
+
+Kunjungi
+https://reactjs.org untuk

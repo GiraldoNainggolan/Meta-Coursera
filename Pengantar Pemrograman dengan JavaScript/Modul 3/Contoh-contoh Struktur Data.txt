@@ -1,0 +1,172 @@
+Dalam bacaan ini, Anda akan belajar tentang beberapa contoh struktur data yang paling umum.
+
+Fokusnya adalah bekerja dengan struktur data Object, Array, Map, dan Set dalam JavaScript, melalui serangkaian contoh.
+
+Harap dicatat bahwa bacaan ini tidak akan mencakup diskusi tentang beberapa struktur data yang ada di beberapa bahasa lain, seperti Antrean atau Senarai Berantai.  Meskipun struktur data ini (dan struktur data lainnya juga!) dapat dikodekan secara khusus dalam JavaScript, sifat lanjutan dari topik-topik ini dan kesulitan dalam mengimplementasikan latihan terkait berarti bahwa mereka berada di luar cakupan bacaan ini. 
+
+Bekerja dengan larik dalam JavaScript
+Sebelumnya, Anda telah mempelajari banyak konsep yang berkaitan dengan cara bekerja dengan array JavaScript.
+
+Namun, masih ada beberapa topik penting yang dapat dibahas, dan salah satunya adalah, misalnya, bekerja dengan beberapa metode bawaan.
+
+Dalam bacaan ini, fokusnya adalah pada tiga metode spesifik yang ada pada array:
+
+forEach
+
+filter
+
+map
+
+ Mari kita jelajahi metode-metode ini.
+
+Metode forEach()
+Array dalam JavaScript dilengkapi dengan metode praktis yang memungkinkan Anda melakukan perulangan pada setiap anggotanya. 
+
+Berikut adalah sintaks dasarnya:
+
+12345
+const fruits = ['kiwi','mango','apple','pear'];
+function appendIndex(fruit, index) {
+    console.log(`${index}. ${fruit}`)
+}
+fruits.forEach(appendIndex);
+Hasil dari menjalankan kode di atas adalah sebagai berikut:  
+
+1234
+0. kiwi
+1. mango
+2. apple
+3. pear
+Untuk menjelaskan sintaksnya, metodeforEach() menerima sebuahfungsi yang akan bekerja pada setiap item larik. Parameter pertama fungsi tersebut adalah item larik saat ini, dan parameter kedua (opsional) adalah indeks.
+
+Sering kali, fungsi yang perlu digunakan oleh metodeforEach() dioper langsung ke dalam pemanggilan metode, seperti ini:
+
+1234
+const veggies = ['onion', 'garlic', 'potato'];
+veggies.forEach( function(veggie, index) {
+    console.log(`${index}. ${veggie}`);
+});
+Hal ini membuat kode menjadi lebih ringkas, tetapi mungkin agak sulit untuk dibaca. Untuk meningkatkan keterbacaan, terkadang fungsi panah digunakan. Anda dapat mengetahui lebih lanjut tentang fungsi panah dalam bacaan tambahan.
+
+Metodefilter()
+Metode lain yang sangat berguna pada larik adalah metodefilter(). Metode ini menyaring larik Andaberdasarkan tes tertentu. Item-item larik yang lulus tes akan dikembalikan.
+
+Berikut adalah contohnya:
+
+1234
+const nums = [0,10,20,30,40,50];
+nums.filter( function(num) {
+    return num > 20;
+})
+Inilah nilai larik yang dikembalikan:  
+
+1
+[30,40,50]
+Mirip dengan metodeforEach(), metodefilter() juga menerima sebuah fungsi dan fungsi tersebut melakukan beberapa pekerjaan pada setiap item dalam larik.
+
+Metode map
+Terakhir, ada metodemap yang sangat berguna. 
+
+Metode ini digunakan untuk memetakan setiap item larik ke item larik lain, berdasarkan pekerjaan apa pun yang dilakukan di dalam fungsi yang dimasukkan ke dalam peta sebagai parameter. 
+
+Sebagai contoh:
+
+123
+[0,10,20,30,40,50].map( function(num) {
+    return num / 10
+})
+Nilai balik dari kode di atas adalah:  
+
+1
+[0,1,2,3,4,5]
+Seperti yang telah dibahas, memilih struktur data yang tepat akan mempengaruhi kode yang Anda tulis. Hal ini dikarenakan struktur data itu sendiri dilengkapi dengan beberapa fungsi bawaan yang membuatnya lebih mudah untuk melakukan tugas-tugas tertentu atau membuatnya lebih sulit atau bahkan tidak mungkin tanpa mengubah kode Anda ke struktur data yang tepat.
+
+Setelah Anda mempelajari metode-metode tersebut, mari kita jelajahi cara bekerja dengan berbagai struktur data bawaan dalam JavaScript.
+
+Bekerja dengan Objek dalam JavaScript
+Banyak informasi tentang cara bekerja dengan objek dalam JavaScript telah dibahas dalam kursus ini.
+
+Contoh di bawah ini menunjukkan cara menggunakan struktur data objek untuk menyelesaikan tugas tertentu. Tugas ini adalah mengubah objek menjadi larik:
+
+12345678910
+const result = [];
+const drone = {
+    speed: 100,
+    color: 'yellow'
+}
+const droneKeys = Object.keys(drone);
+droneKeys.forEach( function(key) {
+    result.push(key, drone[key])
+})
+console.log(result)
+Ini adalah hasil dari eksekusi kode di atas:  
+
+1
+['speed',100,'color','yellow']
+Meskipun hal ini memungkinkan dan berhasil, namun jika Anda harus melakukan hal seperti ini berarti Anda belum memilih struktur data yang tepat untuk digunakan dalam kode Anda.
+
+Di sisi lain, terkadang Anda tidak bisa memilih struktur data yang Anda gunakan. Mungkin data tersebut berasal dari penyedia data pihak ketiga dan yang bisa Anda lakukan hanyalah membuat kode program Anda agar dapat menggunakannya. Anda akan mempelajari lebih lanjut tentang pertukaran data di web saat Anda mempelajari JSON (JavaScript Object Notation).
+
+Bekerja dengan Peta di JavaScript
+Untuk membuat Peta baru, Anda dapat menggunakan konstruktorMap:
+
+1
+new Map();
+Sebuah peta dapat terasa sangat mirip dengan sebuah objek dalam JS.
+
+Namun, peta tidak memiliki pewarisan. Tidak ada prototipe! Hal ini membuatnya berguna sebagai penyimpanan data.
+
+Sebagai contoh:
+
+123456
+let bestBoxers = new Map();
+bestBoxers.set(1, "The Champion");
+bestBoxers.set(2, "The Runner-up");
+bestBoxers.set(3, "The third place");
+
+console.log(bestBoxers);
+Berikut adalah keluaran konsol:  
+
+1
+Map(3) {1 => 'The Champion', 2 => 'The Runner-up', 3 => 'The third place'}
+Untuk mendapatkan nilai tertentu, Anda perlu menggunakan metodeget(). Sebagai contoh:  
+
+1
+bestBoxers.get(1); // 'The Champion'
+Bekerja dengan Set di JavaScript
+Set adalah kumpulan nilai unik.
+
+Untuk membuat set baru, Anda dapat menggunakan konstruktorSet:
+
+1
+new Set();
+KonstruktorSet dapat, misalnya, menerima larik.
+
+Ini berarti kita dapat menggunakannya untuk menyaring larik dengan cepat untuk mencari anggota yang unik.
+
+123
+const repetitiveFruits = ['apple','pear','apple','pear','plum', 'apple'];
+const uniqueFruits = new Set(repetitiveFruits);
+console.log(uniqueFruits);
+Kode di atas menghasilkan keluaran berikut ini di konsol:  
+
+1
+{'apple', 'pear', 'plum'}
+Struktur data lain dalam JavaScript
+Selain struktur data bawaan dalam JavaScript, Anda juga dapat membuat struktur data khusus yang tidak bawaan.
+
+Struktur data ini sudah tersedia secara bawaan di beberapa bahasa pemrograman lain atau bahkan bahasa pemrograman lain tersebut tidak mendukungnya secara bawaan.
+
+Beberapa struktur data tingkat lanjut yang belum tercakup di sini antara lain:
+
+Antrian
+
+Senarai berantai (senarai tunggal dan senarai ganda)
+
+Pohon
+
+Grafik
+
+Untuk sumber-sumber tentang pembuatan struktur data ini, silakan lihat bacaan tambahan.
+
+  

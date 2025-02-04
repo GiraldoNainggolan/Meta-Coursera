@@ -1,0 +1,80 @@
+Fitur ES6 yang berguna memungkinkan saya untuk menetapkan parameter default di dalam definisi fungsi Pertama, .
+
+Artinya, saya akan menggunakan fitur ES6 yang memungkinkan saya untuk menetapkan parameter default di dalam definisi fungsi, yang sejalan dengan pendekatan pengkodean defensif, dan hampir tidak memerlukan usaha untuk mengimplementasikannya.
+
+Sebagai contoh, pertimbangkan deklarasi fungsi tanpa parameter default yang ditetapkan:
+
+123
+function noDefaultParams(number) {
+    console.log('Result:', number * number)
+}
+Jelas, fungsinoDefaultParams harus mengembalikan angka berapa pun yang diterimanya,dikuadratkan.
+
+Namun, bagaimana jika saya menyebutnya seperti ini:
+
+
+1
+noDefaultParams(); // Result: NaN
+JavaScript, karena sifatnya yang dinamis, tidak memberikan kesalahan, tetapi mengembalikan keluaran yang tidak masuk akal.
+
+Pertimbangkan sekarang, perbaikan berikut ini, dengan menggunakan parameter default:
+
+
+123
+function withDefaultParams(number = 10) {
+    console.log('Result:', number * number)
+}
+Parameter default memungkinkan saya untuk membuat fungsi yang akan berjalan dengan nilai argumen default meskipun saya tidak memberikan argumen apa pun, namun tetap cukup fleksibel untuk memungkinkan saya memberikan nilai argumen khusus dan menanganinya dengan tepat.
+
+Hal ini sekarang memungkinkan saya untuk mengkodekan kelas saya dengan cara yang akan mendorong instantiasi objek yang lebih mudah.
+
+Perhatikan definisi kelas berikut ini:
+
+
+12345678910111213141516
+class NoDefaultParams {
+    constructor(num1, num2, num3, string1, bool1) {
+        this.num1 = num1;
+        this.num2 = num2;
+        this.num3 = num3;
+        this.string1 = string1;
+        this.bool1 = bool1;
+    }
+    calculate() {
+        if(this.bool1) {
+
+Sekarang saya akan menginstansiasi objek dari kelasNoDefaultParams, dan menjalankan metodecalculate() di atasnya. Tentunya,bool1 harus disetel ketrue pada pemanggilan untuk membuat ini bekerja, tetapi saya akan menyetelnya ke false dengan sengaja, untuk menyoroti poin yang saya buat.
+
+
+12
+var fail = new NoDefaultParams(1,2,3,false);
+fail.calculate(); // 'The value of bool1 is incorrect'
+Contoh ini mungkin menyoroti alasan mengapa terkadang pesan kesalahan yang aneh muncul ketika beberapa perangkat lunak digunakan - mungkin pengembang tidak memiliki cukup waktu untuk membuatnya lebih baik.
+
+Namun, sekarang setelah Anda mengetahui tentang parameter default, contoh ini dapat diperbaiki sebagai berikut:
+
+
+123456789101112131415161718
+class WithDefaultParams {
+    constructor(num1 = 1, num2 = 2, num3 = 3, string1 = "Result:", bool1 = true) {
+        this.num1 = num1;
+        this.num2 = num2;
+        this.num3 = num3;
+        this.string1 = string1;
+        this.bool1 = bool1;
+    }
+    calculate() {
+        if(this.bool1) {
+
+
+Pendekatan ini meningkatkan pengalaman pengembang kode saya, karena saya tidak perlu lagi khawatir untuk memberikan semua argumen kepada kelasWithDefaultParameters. Untuk pengujian cepat, hal ini sangat bagus, karena saya tidak perlu lagi khawatir tentang memberikan argumen yang tepat.
+
+Selain itu, pendekatan ini sangat berguna ketika membangun hirarki pewarisan menggunakan kelas, karena memungkinkan untuk hanya menyediakan properti khusus di sub-kelas, sambil tetap menerima semua parameter default dari konstruktor super-kelas.
+
+Sebagai kesimpulan, dalam bacaan ini saya telah membahas hal-hal berikut: 
+
+Bagaimana pendekatan untuk mendesain program berorientasi objek dalam JavaScript 
+
+Peran kata kunciextends dansuper
+
+Pentingnya menggunakan parameter default.

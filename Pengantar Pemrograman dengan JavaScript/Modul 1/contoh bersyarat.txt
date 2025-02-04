@@ -1,0 +1,45 @@
+Pada bacaan ini, Anda akan mempelajari kapan menggunakan pernyataan if else dan kapan menggunakan pernyataan switch.
+
+Baik if else maupun switch digunakan untuk menentukan alur eksekusi program berdasarkan apakah beberapa kondisi telah terpenuhi atau tidak.
+
+Inilah sebabnya mengapa mereka kadang-kadang disebut sebagai pernyataan kontrol aliran. Dengan kata lain, mereka mengontrol aliran eksekusi kode Anda, sehingga beberapa kode dapat dilewati, sementara kode lain dapat dieksekusi.
+
+Inti dari kedua struktur flow control adalah evaluasi dari satu atau beberapa kondisi.
+
+Secara umum, if else lebih cocok jika ada pilihan biner dalam kondisi tersebut.
+
+Misalnya, dalam bahasa Inggris sederhana:jika cuaca cerah, kenakan kacamata hitam. Jika tidak, jangan.
+
+Dalam hal ini, menggunakan pernyataan if adalah pilihan yang jelas.
+
+Ketika ada sejumlah kecil kemungkinan hasil pemeriksaan kebenaran, masih memungkinkan untuk menggunakan pernyataan if else, seperti:
+
+12345678910
+if(light == "green") {
+    console.log("Drive")
+} else if (light == "orange") {
+    console.log("Get ready")
+} else if (light == "red") {
+    console.log("Dont' drive")
+} else {
+    //this block will run if no condition matches
+    console.log("The light is not green, orange, or red");
+}
+Namun, jika ada banyak kemungkinan hasil, praktik terbaiknya adalah menggunakan pernyataan switch karena lebih mudah dan tidak bertele-tele. Karena lebih mudah dibaca, lebih mudah untuk mengikuti logika, dan dengan demikian mengurangi beban kognitif dalam membaca banyak kondisi.
+
+Namun demikian, ini bukanlah aturan yang ditetapkan di atas batu. Ini hanyalah sebuah pilihan gaya.
+
+Untuk memperkuat poin ini, berikut adalah contoh dari pernyataan kondisional if else sebelumnya, menggunakan sintaks switch: 
+
+16151413121110
+//converting the previous if-else example with switch-case
+switch(light) {
+   case 'green':
+       console.log("Drive");
+       break;
+   case 'orange':
+       console.log("Get ready");
+       break;
+   case 'red':
+       console.log("Don't drive");
+

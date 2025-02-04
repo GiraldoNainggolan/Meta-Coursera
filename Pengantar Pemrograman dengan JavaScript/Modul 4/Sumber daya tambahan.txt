@@ -1,0 +1,22 @@
+Berikut ini adalah daftar sumber daya yang dapat membantu Anda dalam melanjutkan perjalanan belajar Anda.
+
+MDN: Pemrograman situs web sisi server
+Berikut ini adalah daftar sumber daya yang dapat membantu Anda dalam melanjutkan perjalanan belajar Anda.
+
+MDN: Pemrograman situs web sisi server
+https://developer.mozilla.org/en-US/docs/Learn/Server-side
+
+Situs web dokumen Nodejs.org
+https://nodejs.org/api/documentation.html
+
+Situs web kerangka kerja pengujian Jest
+https://jestjs.io/
+
+Kerangka kerja pengujian Cypress
+https://jestjs.io/
+
+situs web npm
+https://jestjs.io/
+
+Pengujian unit dalam JavaScript
+https://jestjs.io/

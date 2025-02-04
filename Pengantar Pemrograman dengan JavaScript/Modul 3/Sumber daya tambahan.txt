@@ -1,0 +1,17 @@
+Berikut ini adalah daftar sumber daya yang dapat membantu Anda dalam melanjutkan perjalanan belajar Anda.
+
+Pembuat
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor
+
+Kelas
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
+
+Pemrograman berorientasi objek
+https://css-tricks.com/the-flavors-of-object-oriented-programming-in-javascript/
+ 
+
+Ekspresi Reguler dalam JavaScript
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
+
+Objek RegExp dalam JavaScript
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp

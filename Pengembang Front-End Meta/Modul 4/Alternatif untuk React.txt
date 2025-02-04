@@ -1,0 +1,37 @@
+React adalah sebuah library dan bukan sebuah framework. Ini berarti Anda akan sering menggunakan library JavaScript lain untuk membangun aplikasi Anda. Dalam bacaan ini, Anda akan diperkenalkan secara singkat kepada beberapa library JavaScript yang biasa digunakan dengan React.
+
+Lodash
+https://lodash.com/
+
+Sebagai seorang pengembang, ada banyak logika yang biasa Anda tulis di seluruh aplikasi. Sebagai contoh, Anda mungkin perlu mengurutkan daftar item atau membulatkan angka seperti3.14 menjadi3. Lodash menyediakan logika umum seperti ini sebagai pustaka utilitas untuk menghemat waktu Anda sebagai pengembang.
+
+
+
+Luxon
+https://moment.github.io/luxon/#/
+
+Anda akan sering bekerja dengan tanggal dan waktu sebagai pengembang. Bayangkan melihat daftar pesanan dan kapan pesanan itu dibuat, atau menampilkan jadwal kalender untuk suatu acara. Tanggal dan waktu ada di mana-mana.
+
+Luxon membantu Anda bekerja dengan tanggal dan waktu dengan menyediakan fungsi untuk memanipulasi dan menampilkannya. Sebagai contoh, pikirkan bagaimana tanggal diformat di berbagai negara. Di Amerika Serikat formatnya adalahMonth Day Year tetapi di Eropa adalahDay Month Year. Ini adalah salah satu area di mana Luxon dapat membantu Anda menampilkan tanggal dalam format lokal pengguna.
+
+
+
+Redux
+https://redux.js.org/
+
+Ketika membangun aplikasi web, Anda harus melacak statusnya. Pikirkan ketika Anda berbelanja online. Aplikasi web melacak item yang ada di keranjang belanja Anda. Ketika Anda menghapus item dari keranjang, aplikasi perlu memperbarui apa yang ditampilkan di layar. Di sinilah Redux berperan. Aplikasi ini membantu Anda mengelola status aplikasi Anda dan bahkan memiliki fitur-fitur canggih seperti undo dan redo.
+
+
+
+Axios
+https://axios-http.com/
+
+Sebagai pengembang, Anda akan sering berkomunikasi dengan API melalui HTTP. Perpustakaan Axios membantu menyederhanakan pengiriman permintaan HTTP dan memproses respons. Library ini juga menyediakan fitur-fitur canggih yang memungkinkan Anda untuk membatalkan permintaan dan mengubah data yang diterima dari server web sebelum aplikasi Anda menggunakan data tersebut.
+
+
+
+
+Jest
+https://jestjs.io/
+
+Merupakan praktik yang baik untuk menulis tes otomatis untuk kode Anda sebagai pengembang profesional. Perpustakaan jest membantu Anda untuk melakukan hal ini dan bekerja dengan banyak perpustakaan dan kerangka kerja. Ini juga menyediakan utilitas pelaporan seperti memberikan informasi tentang berapa banyak kode Anda yang diuji oleh tes otomatis Anda.

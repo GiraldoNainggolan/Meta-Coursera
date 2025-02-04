@@ -1,0 +1,137 @@
+Pada bacaan ini, Anda akan mempelajari bagaimana cara kerja perulangan for of secara konseptual.
+
+Untuk memulai, penting untuk mengetahui bahwa perulangan for of tidak dapat bekerja pada sebuah objek secara langsung, karenaobjek tidak dapat diulang. Sebagai contoh:
+
+12345678
+const car = {
+    speed: 100,
+    color: "blue"
+}
+
+for(prop of car) {
+    console.log(prop)
+}
+Atur ulang
+Menjalankan cuplikan kode di atas akan menghasilkan kesalahan berikut:  
+
+1
+Uncaught TypeError: car is not iterable
+Berlawanan dengan objek, larikdapat diulang. Sebagai contoh:  
+
+1234
+const colors = ['red','orange','yellow']
+for (var color of colors) {
+    console.log(color);
+}
+Atur ulang
+Kali ini, keluarannya adalah sebagai berikut:  
+
+3
+red
+orange
+yellow
+Untungnya, Anda dapat menggunakan fakta bahwa perulangan for dapat dijalankan pada arrayuntuk mengulang objek.
+
+Tapi bagaimana caranya?
+
+Sebelum Anda dapat menjawab pertanyaan ini dengan benar, Anda harus terlebih dahulu meninjau tiga metode bawaan:Object.keys(),Object.values(), danObject.entries().
+
+Metode bawaan
+MetodeObject.keys()
+MetodeObject.keys() menerima sebuah objek sebagai parameternya. Ingat, objek ini adalahobjek yang ingin Anda ulangi. Masih terlalu dini untuk menjelaskan bagaimana Anda akan mengulang objek itu sendiri; untuk saat ini, fokuslah pada array properti yang dikembalikan ketika Anda memanggil metodeObject.keys().
+
+Berikut adalah contoh menjalankan metodeObject.keys() pada objekcar2 yang baru:
+
+12345
+const car2 = {
+    speed: 200,
+    color: "red"
+}
+console.log(Object.keys(car2)); // ['speed','color']
+Atur ulang
+Jadi, ketika saya menjalankanObject.keys() dan mengoper objekcar2,nilai yang dikembalikan adalah sebuah larik string, di mana setiap string merupakan kunci properti dari properti yang terdapat dalam objekcar2.
+
+Metode Object.values() 
+Metode lain yang berguna adalahObject.values():
+
+12345
+const car3 = {
+    speed: 300,
+    color: "yellow"
+}
+console.log(Object.values(car3)); // [300, 'yellow']
+Metode Object.entries() 
+Terakhir, ada metode lain yang berguna,Object.entries(), yang mengembalikan sebuah larik yang berisi daftar kunci dan nilai.  
+
+12345
+const car4 = {
+    speed: 400,
+    color: 'magenta'
+}
+console.log(Object.entries(car4));
+Apa yang dikembalikan dari pemanggilan metodeObject.entries() adalah sebagai berikut:  
+
+1
+[ ['speed', 400], ['color', 'magenta'] ]
+Kali ini, nilai yang dikembalikan adalah larik beranggotakan 2 yang bersarang di dalam larik. Dengan kata lain, Anda mendapatkan larik array, di mana setiap item array memiliki dua anggota, yang pertama adalah kunci properti, dan yang kedua adalah nilai properti.
+
+Secara efektif, ini seolah-olah Anda membuat daftar semua properti objek tertentu, seperti ini:
+
+12345
+[
+    [propertyKey, propertyVal],
+    [propertyKey, propertyVal],
+    ...etc
+]
+Sebagai rangkuman, Anda telah mempelajari bahwa Anda dapat mengulang array menggunakan perulanganfor of.  Anda juga telah mempelajari bahwa Anda dapat mengekstrak kunci, nilai, atau keduanya dari sebuah objek, dengan menggunakan sintaksObject.keys(),Object.values(), danObject.entries().
+
+Contoh
+Anda sekarang memiliki semua bahan yang Anda perlukan untuk mengulangkunci dan nilai properti objek apa pun.
+
+Berikut ini adalah contoh yang sangat sederhana untuk melakukan hal tersebut:
+
+12345678910
+var clothingItem = {
+    price: 50,
+    color: 'beige',
+    material: 'cotton',
+    season: 'autumn'
+}
+
+for( const key of Object.keys(clothingItem) ) {
+    console.log(key, ":", clothingItem[key])
+}
+Bagian tersulit untuk dipahami dalam sintaks ini mungkin adalahclothingItem[key].
+
+Untungnya, hal ini tidak terlalu sulit untuk dipahami, terutama karena Anda telah mempelajari konsep ini sebelumnya saat Anda mempelajaricara mengakses anggota objek menggunakan notasi kurung. 
+
+Ingatlah bahwa Anda juga telah mempelajari bagaimana Anda dapat mengakses nama properti secara dinamis.
+
+Untuk meninjau kembali konsep ini dan menunjukkan demo praktis bagaimana cara kerjanya, mari kita kodekan deklarasi fungsi yang secara acak menetapkan stringspeed atau stringcolor ke sebuah nama variabel, lalu buat sebuah objek yang hanya memiliki dua kunci: kuncispeed dan kuncicolor.
+
+Setelah penyiapan ini, Anda akan dapat mengakses salah satu dari properti tersebut secara dinamis pada objekdrone yang baru, dengan menggunakan notasi kurung.
+
+Berikut ini adalah contoh kodenya:
+
+12345678910111213141516
+function testBracketsDynamicAccess() {
+  var dynamicKey;
+  if(Math.random() > 0.5) {
+    dynamicKey = "speed";
+   }else{
+     dynamicKey = "color";
+   }
+
+    var drone = {
+      speed: 15,
+
+Atur ulang
+Contoh ini mungkin terasa sedikit berbelit-belit, tetapi tujuannya adalah untuk mendemonstrasikan fakta bahwa Anda mendapatkan salah satu nilai dari kunci objek, berdasarkan string yang ditetapkan ke variabeldynamicKey, dan diakses tanpa masalah, dengan menggunakan notasi tanda kurung.
+
+Silakan jalankan fungsitestBracketsDynamicAccess() beberapa kali, dan Anda akan melihat bahwa terkadang nilai yang dihasilkan adalah15, dan terkadangorange, meskipun saya selalu mengakses kuncidrone[dynamicKey]. Karena nilai dari dynamicKey diisi pada pemanggilanMath.random(), terkadang ekspresi tersebut dievaluasi menjadidrone["speed"], dan terkadang ekspresi tersebut dievaluasi menjadidrone["color"].
+
+
+Anda sekarang telah belajar tentang blok bangunan yang membuat perulangan for berguna untuk mengulang objek -meskipun objek  bukanlah perulangan. 
+
+Selanjutnya, Anda akan melihat contoh praktis bekerja dengan perulangan for of dan for in. Setiap perulangan memiliki tempatnya masing-masing dan dapat digunakan dalam situasi yang berbeda.
+

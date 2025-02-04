@@ -1,0 +1,80 @@
+Literal objek dan notasi titik
+Salah satu cara yang paling umum untuk membuat objek dalam JavaScript adalah dengan menggunakan sintaksis literal objek:{}.
+
+Untuk dapat mengakses literal objek ini, sangat umum untuk menetapkannya ke sebuah variabel, seperti:
+
+1
+var user = {}; //create an object
+Sekarang sebuah literal objek ditetapkan ke variabeluser, yang berarti bahwa objek yang terikat padanya dapat diperluas dan dimanipulasi dengan berbagai cara.
+
+Terkadang, seluruh objek dapat langsung dibuat, menggunakan sintaksis literal objek, dengan menentukan properti objek, yang dibatasi sebagai pasangan key-value, menggunakan sintaksis yang telah dibahas dalam pelajaran sebelumnya dalam pelajaran ini.
+
+Berikut adalah salah satu objek yang telah dibuat sebelumnya:
+
+9
+//creating an object with properties and their values
+var assistantManager = {
+    rangeTilesPerTurn: 3,
+    socialSkills: 30,
+    streetSmarts: 30,
+    health: 40,
+    specialAbility: "young and ambitious",
+    greeting: "Let's make some money"
+}
+Keindahan dari sintaks ini adalah bahwa sintaks ini sangat mudah dibaca. 
+
+Pada dasarnya terdiri dari dua langkah: 
+
+1. Mendeklarasikan variabel baru dan memberikan objek secara literal ke variabel tersebut - dengan kata lain:var assistantManager = {}
+
+2. Menetapkan nilai ke masing-masing kunci objek, menggunakan operator penugasan,=
+
+Perhatikan bahwa sangat mudah untuk membuat objek apa pun dalam JavaScript dengan menggunakan contoh sintaks ini.
+
+Sebagai contoh, berikut ini adalah objektable:
+
+12345
+var table = {
+    legs: 3,
+    color: "brown",
+    priceUSD: 100,
+}
+Untuk mengakses objektable, saya dapat dengan mudah melakukan log konsol pada seluruh objek:  
+
+1
+console.log(table);//display the object in the developer console
+Nilai yang dikembalikan adalah seluruh objektable: 
+
+1
+{legs: 3, color: 'brown', priceUSD: 100}
+Selain itu, saya dapat mencatat secara konsol setiap properti individual, seperti ini:  
+
+1
+console.log(table.color); // 'brown'
+Sekarang setelah saya memiliki "resep sintaksis" ini, saya dapat membuat objek lain dengan cara yang sama: 
+
+5
+var house = {
+    rooms: 3,
+    color: "brown",
+    priceUSD: 10000,
+}
+Pendekatan alternatif untuk membangun objek adalah dengan menyimpan objek kosong secara literal ke sebuah variabel, kemudian menggunakan notasi titik untuk mendeklarasikan properti baru dengan cepat, dan menggunakan operator penugasan untuk menambahkan nilai pada properti tersebut; sebagai contoh:
+
+1234
+var house2 = {};
+house2.rooms = 4;
+house2.color = "pink";
+house2.priceUSD = 12345;
+Selain itu, tidak ada yang menghalangi saya untuk menggabungkan kedua pendekatan tersebut. Sebagai contoh:  
+
+123
+console.log(house); // {rooms: 3, color: "brown", priceUSD: 10000}
+house.windows = 10;
+console.log(house); // {rooms: 3, color: "brown", priceUSD: 10000, windows: 10}
+Fleksibilitas ini juga berarti bahwa saya dapat memperbarui properti yang sudah ada, tidak hanya menambahkan yang baru:  
+
+12
+house.windows = 11;
+console.log(house); // {rooms: 3, color: "brown", priceUSD: 10000, windows: 11}
+

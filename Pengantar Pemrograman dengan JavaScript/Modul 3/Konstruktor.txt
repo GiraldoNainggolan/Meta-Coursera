@@ -1,0 +1,113 @@
+JavaScript memiliki sejumlah tipe objek bawaan, seperti:
+
+Math,Date,Object,Function,Boolean,Symbol,Array,Map,Set,Promise,JSON, dll.
+
+Objek-objek ini kadang-kadang disebut sebagai "objek bawaan".
+
+Fungsi konstruktor, biasanya disebut sebagai "konstruktor", adalah fungsi khusus yang memungkinkan kita untuk membuat instance dari objek native bawaan ini. Semua konstruktor menggunakan huruf besar.
+
+Untuk menggunakan fungsi konstruktor, saya harus menambahkannya dengan operatornew.
+
+Sebagai contoh, untuk membuat instance baru dari objekDate, saya dapat menjalankan:new Date(). Yang saya dapatkan kembali adalah datetime saat ini, seperti:
+
+Thu Feb 03 2022 11:24:08 GMT+0100 (Central European Standard Time) 
+
+Namun, tidak semua objek bawaan dilengkapi dengan fungsi konstruktor. Contoh tipe objek seperti itu adalah objekMath bawaan.
+
+Menjalankannew Math() akan menghasilkanUncaught TypeError, yang memberitahukan kita bahwaMath is not a constructor.
+
+Dengan demikian, saya dapat menyimpulkan bahwa beberapa objek bawaan memang memiliki konstruktor, ketika mereka memiliki tujuan tertentu: untuk memungkinkan kita menginstansiasi contoh spesifik dari konstruktor objek yang diberikan. Objek bawaanDate sangat cocok untuk memiliki konstruktor karena setiap contoh objek tanggal baru yang saya buat harus memiliki data yang unik secara definisi, karena akan menjadi stempel waktu yang berbeda - akan dibuat pada saat yang berbeda dalam waktu.
+
+Objek bawaan lain yang tidak memiliki konstruktor, seperti objekMath, tidak memerlukan konstruktor. Objek tersebut hanyalah objek statis yang properti dan metodenya dapat diakses secara langsung, dari objek bawaan itu sendiri. Dengan kata lain, tidak ada gunanya membuat instance dari objekMath bawaan untuk dapat menggunakan fungsionalitasnya.
+
+Sebagai contoh, jika saya ingin menggunakan metodepow dari objekMath untuk menghitung nilai eksponensial, saya tidak perlu membuat instance dari objekMath untuk melakukannya. Sebagai contoh, untuk mendapatkan angka 2 pangkat 5, saya akan menjalankannya:
+
+Math.pow(2,5); // --> 32
+
+Tidak perlu membuat instance dari objekMath karena tidak akan ada yang perlu disimpan dalam instance objek tersebut.
+
+Selain fungsi konstruktor untuk objek bawaan, saya juga dapat mendefinisikan fungsi konstruktor khusus.
+
+Berikut ini contohnya:
+
+123456
+function Icecream(flavor) {
+    this.flavor = flavor;
+    this.meltIt = function() {
+        console.log(`The ${this.flavor} icecream has melted`);
+    }
+}
+Atur ulang
+Sekarang saya bisa membuat es krim sebanyak yang saya inginkan:
+
+1234567891011
+function Icecream(flavor) {
+    this.flavor = flavor;
+    this.meltIt = function() {
+        console.log(`The ${this.flavor} icecream has melted`);
+    }
+}
+
+let kiwiIcecream = new Icecream("kiwi");
+let appleIcecream = new Icecream("apple");
+kiwiIcecream; // --> Icecream {flavor: 'kiwi', meltIt: ƒ}
+
+Atur ulang
+Saya baru saja membuat dua objek instance dengan tipeIcecream.
+
+Kasus penggunaannew yang paling umum adalah menggunakannya dengan salah satu tipe objek bawaan.
+
+Perhatikan bahwa menggunakan fungsi konstruktor pada semua objek bawaan terkadang bukan pendekatan terbaik.
+
+Hal ini terutama berlaku untuk konstruktor objek dengan tipe primitif, yaitu:String,Number, danBoolean.
+
+Sebagai contoh, dengan menggunakan konstruktorString bawaan, saya dapat membuat string baru:
+
+12
+let apple = new String("apple");
+apple; // --> String {'apple'}
+Variabelapple adalah sebuah objek bertipeString.
+
+Mari kita lihat bagaimana objekapple berbeda dengan variabelpear berikut ini:
+
+12
+let pear = "pear";
+pear; // --> "pear"
+Variabelpear adalah literal string, yaitu nilai Javascript primitif.
+
+Variabelpear, sebagai nilai primitif, akan selalu lebih berkinerja lebih baik daripada variabelapple, yang merupakan sebuah objek.
+
+Selain lebih berkinerja baik, karena setiap objek dalam JavaScript bersifat unik, Anda tidak dapat membandingkan objek String dengan objek String lainnya, meskipun nilainya sama.
+
+Dengan kata lain, jika Anda membandingkannew String('plum') === new String('plum'), Anda akan mendapatkan kembalifalse, sementara"plum" === "plum" mengembalikan nilai true. Anda mendapatkanfalse ketika membandingkan objek karena bukan nilai yang Anda berikan kepada konstruktor yang dibandingkan, melainkan lokasi memori tempat objek disimpan.
+
+Selain tidak menggunakan konstruktor untuk membuat versi objek dari primitif, Anda lebih baik tidak menggunakan konstruktor ketika membuat objek biasa.
+
+Alih-alihnew Object, Anda harus tetap menggunakan sintaksis literal objek:{}.
+
+Objek RegExp adalah objek bawaan lain dalam JavaScript. Objek ini digunakan untuk mencocokkan pola string menggunakan apa yang dikenal sebagai "Regular Expressions". Regular Expressions ada di banyak bahasa, bukan hanya JavaScript.
+
+Dalam JavaScript, Anda dapat membuat instance dari konstruktor RegExp menggunakan new RegExp. 
+
+Sebagai alternatif, Anda dapat menggunakan pattern literal sebagai pengganti RegExp. Berikut ini contoh penggunaan /d/ sebagai pattern literal, yang dimasukkan sebagai argumen ke metode match pada sebuah string.
+
+12
+"abcd".match(/d/); // ['d', index: 3, input: 'abcd', groups: undefined]
+"abcd".match(/a/); // ['a', index: 0, input: 'abcd', groups: undefined]
+Alih-alih menggunakan konstruktorArray,Function, danRegExp, Anda harus menggunakan jenis literal larik, literal fungsi, dan literal pola:[],() {}, dan/()/.
+
+Namun, ketika membangun objek dengan tipe bawaan lainnya, kita dapat menggunakan konstruktor.
+
+Berikut adalah beberapa contohnya:
+
+1234567
+new Date();
+new Error();
+new Map();
+new Promise();
+new Set();
+new WeakSet();
+new WeakMap();
+Daftar di atas tidak konklusif, tetapi hanya untuk memberi Anda gambaran tentang beberapa fungsi konstruktor yang dapat Anda gunakan.
+
+Perhatikan bahwa ada tautan yang disediakan tentang RegExp dan ekspresi reguler dalam item pelajaran berjudul "Bacaan Tambahan".

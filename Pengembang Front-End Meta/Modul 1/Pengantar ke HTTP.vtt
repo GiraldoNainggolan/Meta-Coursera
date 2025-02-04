@@ -1,0 +1,741 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:02.685
+Pernahkah Anda memperhatikan ikon kunci
+
+2
+00:00:02.685 --> 00:00:04.935
+di samping URL di browser web Anda?
+
+3
+00:00:04.935 --> 00:00:07.125
+Ini berarti bahwa HTTPS,
+
+4
+00:00:07.125 --> 00:00:10.440
+versi aman HTTP sedang digunakan.
+
+5
+00:00:10.440 --> 00:00:13.695
+HTTP adalah protokol operasional inti
+
+6
+00:00:13.695 --> 00:00:15.105
+dari world wide web.
+
+7
+00:00:15.105 --> 00:00:17.100
+Inilah yang memungkinkan browser web Anda
+
+8
+00:00:17.100 --> 00:00:20.340
+berkomunikasi dengan server web yang menghosting situs web.
+
+9
+00:00:20.340 --> 00:00:23.070
+HTTP adalah protokol komunikasi yang
+
+10
+00:00:23.070 --> 00:00:25.440
+Anda gunakan setiap kali Anda menjelajah web.
+
+11
+00:00:25.440 --> 00:00:29.835
+HTTP adalah singkatan dari Hypertext Transfer Protocol.
+
+12
+00:00:29.835 --> 00:00:32.415
+Ini adalah protokol yang digunakan untuk mentransfer
+
+13
+00:00:32.415 --> 00:00:35.010
+sumber daya web seperti dokumen HTML,
+
+14
+00:00:35.010 --> 00:00:38.310
+gambar, gaya, dan file lainnya.
+
+15
+00:00:38.310 --> 00:00:42.225
+HTTP adalah protokol berbasis respon permintaan.
+
+16
+00:00:42.225 --> 00:00:45.710
+Browser web atau klien mengirimkan permintaan HTTP ke
+
+17
+00:00:45.710 --> 00:00:47.750
+server dan server web mengirimkan
+
+18
+00:00:47.750 --> 00:00:50.315
+respons HTTP kembali ke browser.
+
+19
+00:00:50.315 --> 00:00:52.490
+Selanjutnya, mari kita mulai menjelajahi
+
+20
+00:00:52.490 --> 00:00:55.105
+susunan permintaan HTTP.
+
+21
+00:00:55.105 --> 00:00:58.685
+Permintaan HTTP terdiri dari metode,
+
+22
+00:00:58.685 --> 00:01:02.180
+jalur, versi, dan header.
+
+23
+00:01:02.180 --> 00:01:04.190
+Metode HTTP menjelaskan
+
+24
+00:01:04.190 --> 00:01:07.045
+jenis tindakan yang harus dilakukan klien.
+
+25
+00:01:07.045 --> 00:01:11.555
+Metode HTTP utama atau yang paling umum digunakan adalah,
+
+26
+00:01:11.555 --> 00:01:15.695
+GET, POST, PUT, dan DELETE.
+
+27
+00:01:15.695 --> 00:01:17.510
+Metode GET digunakan untuk
+
+28
+00:01:17.510 --> 00:01:19.975
+mengambil informasi dari server yang diberikan.
+
+29
+00:01:19.975 --> 00:01:23.570
+Permintaan POST digunakan untuk mengirim data ke server.
+
+30
+00:01:23.570 --> 00:01:25.700
+Metode PUT memperbarui apa pun yang
+
+31
+00:01:25.700 --> 00:01:28.325
+saat ini ada di server web dengan sesuatu yang lain.
+
+32
+00:01:28.325 --> 00:01:31.145
+Metode DELETE menghapus sumber daya.
+
+33
+00:01:31.145 --> 00:01:33.350
+Path adalah representasi dari
+
+34
+00:01:33.350 --> 00:01:35.555
+mana sumber daya disimpan di server web,
+
+35
+00:01:35.555 --> 00:01:37.850
+misalnya jika Anda ingin
+
+36
+00:01:37.850 --> 00:01:40.520
+meminta gambar dari halaman di situs web,
+
+37
+00:01:40.520 --> 00:01:43.250
+maka URL di bilah alamat harus
+
+38
+00:01:43.250 --> 00:01:44.600
+berisi jalur lengkap ke
+
+39
+00:01:44.600 --> 00:01:46.925
+file tertentu di server web,
+
+40
+00:01:46.925 --> 00:01:49.345
+seperti contoh dot com, gambar
+
+41
+00:01:49.345 --> 00:01:53.320
+garis miring maju, gambar garis miring maju titik jpg.
+
+42
+00:01:53.320 --> 00:01:56.660
+Ada beberapa versi protokol HTTP.
+
+43
+00:01:56.660 --> 00:01:58.475
+Saya tidak akan menjelajahi ini sekarang,
+
+44
+00:01:58.475 --> 00:02:00.230
+tetapi saya ingin Anda menyadari bahwa Versi
+
+45
+00:02:00.230 --> 00:02:03.410
+1.1 dan 2.0 adalah yang paling banyak digunakan.
+
+46
+00:02:03.410 --> 00:02:05.810
+Akhirnya, ada header.
+
+47
+00:02:05.810 --> 00:02:08.180
+Header berisi informasi tambahan
+
+48
+00:02:08.180 --> 00:02:11.420
+tentang permintaan dan klien yang membuat permintaan.
+
+49
+00:02:11.420 --> 00:02:13.230
+Untuk metode permintaan tertentu,
+
+50
+00:02:13.230 --> 00:02:14.840
+permintaan juga akan berisi
+
+51
+00:02:14.840 --> 00:02:17.350
+isi konten yang dikirim klien.
+
+52
+00:02:17.350 --> 00:02:19.730
+Sekarang, mari kita bahas beberapa detail
+
+53
+00:02:19.730 --> 00:02:22.480
+tentang susunan respons HTTP.
+
+54
+00:02:22.480 --> 00:02:24.950
+Respons HTTP mengikuti format yang
+
+55
+00:02:24.950 --> 00:02:26.585
+mirip dengan format permintaan.
+
+56
+00:02:26.585 --> 00:02:28.280
+Setelah header, respon
+
+57
+00:02:28.280 --> 00:02:29.705
+opsional akan berisi
+
+58
+00:02:29.705 --> 00:02:31.580
+badan pesan yang terdiri
+
+59
+00:02:31.580 --> 00:02:34.010
+dari isi respon seperti dokumen HTML,
+
+60
+00:02:34.010 --> 00:02:36.070
+file gambar dan sebagainya.
+
+61
+00:02:36.070 --> 00:02:39.430
+Kode status HTTP yang terkandung dalam header
+
+62
+00:02:39.430 --> 00:02:43.405
+menunjukkan apakah permintaan HTTP berhasil diselesaikan.
+
+63
+00:02:43.405 --> 00:02:45.490
+Nilai kode berada dalam kisaran
+
+64
+00:02:45.490 --> 00:02:49.670
+100-599 dan dikelompokkan berdasarkan tujuan.
+
+65
+00:02:49.670 --> 00:02:51.040
+Pesan status
+
+66
+00:02:51.040 --> 00:02:53.395
+adalah representasi teks dari kode status.
+
+67
+00:02:53.395 --> 00:02:55.030
+Selama penjelajahan web
+
+68
+00:02:55.030 --> 00:02:57.175
+Anda, pernahkah Anda menemukan halaman yang menampilkan
+
+69
+00:02:57.175 --> 00:03:00.475
+kesalahan 404 tidak ditemukan atau kesalahan 500?
+
+70
+00:03:00.475 --> 00:03:02.240
+Server tidak merespons.
+
+71
+00:03:02.240 --> 00:03:04.930
+Ini adalah kode status HTTP.
+
+72
+00:03:04.930 --> 00:03:06.805
+Saya ingin menjelaskan secara singkat kepada Anda
+
+73
+00:03:06.805 --> 00:03:09.220
+tentang kode status dan pengelompokannya.
+
+74
+00:03:09.220 --> 00:03:11.845
+Ada lima kelompok kode status.
+
+75
+00:03:11.845 --> 00:03:14.555
+Mereka dikelompokkan berdasarkan digit pertama dari nomor kesalahan.
+
+76
+00:03:14.555 --> 00:03:18.505
+Informasi dikelompokkan 100-199.
+
+77
+00:03:18.505 --> 00:03:22.870
+Tanggapan yang berhasil dikelompokkan dari 200-299.
+
+78
+00:03:22.870 --> 00:03:27.085
+Pesan pengalihan adalah 300-399.
+
+79
+00:03:27.085 --> 00:03:31.185
+Respons kesalahan klien berkisar dari 400-499,
+
+80
+00:03:31.185 --> 00:03:35.440
+dan respons kesalahan server adalah 500-599.
+
+81
+00:03:35.440 --> 00:03:37.060
+Respons informasi adalah
+
+82
+00:03:37.060 --> 00:03:39.445
+tanggapan sementara yang dikirim oleh server.
+
+83
+00:03:39.445 --> 00:03:43.105
+Tanggapan ini bersifat sementara sebelum respons yang sebenarnya.
+
+84
+00:03:43.105 --> 00:03:46.540
+Respons informasi yang paling umum adalah 100 lanjutkan,
+
+85
+00:03:46.540 --> 00:03:49.360
+yang menunjukkan bahwa klien web harus terus
+
+86
+00:03:49.360 --> 00:03:51.010
+meminta atau mengabaikan respons
+
+87
+00:03:51.010 --> 00:03:52.990
+jika permintaan sudah selesai.
+
+88
+00:03:52.990 --> 00:03:55.000
+Tanggapan yang berhasil menunjukkan
+
+89
+00:03:55.000 --> 00:03:57.850
+bahwa permintaan berhasil diproses oleh server web,
+
+90
+00:03:57.850 --> 00:03:59.650
+dengan respons sukses yang paling umum
+
+91
+00:03:59.650 --> 00:04:00.910
+adalah 200 OK.
+
+92
+00:04:00.910 --> 00:04:03.770
+Anda menerima tanggapan ini setiap hari ketika Anda
+
+93
+00:04:03.770 --> 00:04:06.490
+berhasil menerima konten dari situs web.
+
+94
+00:04:06.490 --> 00:04:08.145
+Arti OK,
+
+95
+00:04:08.145 --> 00:04:10.485
+tergantung pada metode HTTP.
+
+96
+00:04:10.485 --> 00:04:11.960
+Jika metode ini GET,
+
+97
+00:04:11.960 --> 00:04:13.880
+itu berarti bahwa sumber daya ditemukan dan
+
+98
+00:04:13.880 --> 00:04:16.550
+termasuk dalam tubuh respon HTTP.
+
+99
+00:04:16.550 --> 00:04:19.040
+Jika itu POST, itu berarti bahwa sumber daya
+
+100
+00:04:19.040 --> 00:04:20.210
+berhasil
+
+101
+00:04:20.210 --> 00:04:22.445
+ditransmisikan ke server web dan jika PUT,
+
+102
+00:04:22.445 --> 00:04:23.930
+sumber daya berhasil
+
+103
+00:04:23.930 --> 00:04:25.505
+ditransmisikan ke server web.
+
+104
+00:04:25.505 --> 00:04:28.150
+Akhirnya, jika metodenya DELETE,
+
+105
+00:04:28.150 --> 00:04:30.335
+itu berarti sumber daya telah dihapus.
+
+106
+00:04:30.335 --> 00:04:33.425
+Respons pengalihan menunjukkan kepada klien web
+
+107
+00:04:33.425 --> 00:04:34.820
+bahwa sumber daya yang diminta
+
+108
+00:04:34.820 --> 00:04:36.380
+telah dipindahkan ke jalur yang berbeda.
+
+109
+00:04:36.380 --> 00:04:39.410
+Kode respons yang paling umum digunakan adalah
+
+110
+00:04:39.410 --> 00:04:43.570
+301 dipindahkan secara permanen dan 302 ditemukan.
+
+111
+00:04:43.570 --> 00:04:46.100
+Perbedaan antara pesan pengalihan
+
+112
+00:04:46.100 --> 00:04:48.440
+301 dan 302 adalah bahwa
+
+113
+00:04:48.440 --> 00:04:50.210
+302 menunjukkan
+
+114
+00:04:50.210 --> 00:04:54.160
+pengalihan sementara.Sumber daya telah dipindahkan sementara.
+
+115
+00:04:54.160 --> 00:04:56.705
+Ketika browser web menerima tanggapan ini,
+
+116
+00:04:56.705 --> 00:04:58.160
+mereka akan secara otomatis mengirimkan
+
+117
+00:04:58.160 --> 00:05:01.070
+permintaan untuk sumber daya di jalur baru.
+
+118
+00:05:01.070 --> 00:05:03.530
+Tanggapan kesalahan klien menunjukkan
+
+119
+00:05:03.530 --> 00:05:04.625
+bahwa permintaan berisi
+
+120
+00:05:04.625 --> 00:05:06.635
+sintaks atau konten yang buruk
+
+121
+00:05:06.635 --> 00:05:09.010
+dan tidak dapat diproses oleh server web.
+
+122
+00:05:09.010 --> 00:05:12.950
+Kode yang paling umum digunakan adalah 400
+
+123
+00:05:12.950 --> 00:05:14.330
+digunakan ketika browser web atau
+
+124
+00:05:14.330 --> 00:05:17.285
+klien mengirimkan data buruk ke server web,
+
+125
+00:05:17.285 --> 00:05:20.600
+401 digunakan untuk menunjukkan bahwa pengguna
+
+126
+00:05:20.600 --> 00:05:22.010
+harus masuk ke akun
+
+127
+00:05:22.010 --> 00:05:24.280
+sebelum permintaan dapat diproses,
+
+128
+00:05:24.280 --> 00:05:27.980
+403 digunakan untuk menunjukkan permintaan itu valid,
+
+129
+00:05:27.980 --> 00:05:30.680
+tetapi server web menolak untuk memprosesnya.
+
+130
+00:05:30.680 --> 00:05:33.650
+Ini sering digunakan untuk menunjukkan bahwa pengguna tidak memiliki
+
+131
+00:05:33.650 --> 00:05:35.420
+izin yang cukup untuk menjalankan
+
+132
+00:05:35.420 --> 00:05:37.645
+tindakan dalam aplikasi web,
+
+133
+00:05:37.645 --> 00:05:39.980
+404 digunakan untuk menunjukkan bahwa
+
+134
+00:05:39.980 --> 00:05:42.725
+sumber daya permintaan tidak ditemukan di server web.
+
+135
+00:05:42.725 --> 00:05:45.500
+Respons kesalahan server menunjukkan bahwa kegagalan
+
+136
+00:05:45.500 --> 00:05:46.730
+terjadi pada server web
+
+137
+00:05:46.730 --> 00:05:48.680
+saat mencoba memproses permintaan.
+
+138
+00:05:48.680 --> 00:05:52.760
+Kode yang paling umum digunakan adalah kesalahan server internal 500,
+
+139
+00:05:52.760 --> 00:05:54.605
+yang merupakan status kesalahan umum
+
+140
+00:05:54.605 --> 00:05:57.820
+yang menunjukkan bahwa server gagal memproses permintaan.
+
+141
+00:05:57.820 --> 00:06:00.050
+Sekarang, apakah Anda pernah membeli sesuatu
+
+142
+00:06:00.050 --> 00:06:02.900
+secara online dan perlu memasukkan informasi kartu kredit Anda?
+
+143
+00:06:02.900 --> 00:06:04.880
+Anda tidak ingin orang lain mendapatkan
+
+144
+00:06:04.880 --> 00:06:07.585
+informasi ini dari permintaan HTTP.
+
+145
+00:06:07.585 --> 00:06:10.485
+Di sinilah HTTPS terlibat.
+
+146
+00:06:10.485 --> 00:06:14.075
+HTTPS adalah versi aman dari HTTP.
+
+147
+00:06:14.075 --> 00:06:17.615
+Ini digunakan untuk komunikasi yang aman antara dua komputer
+
+148
+00:06:17.615 --> 00:06:19.160
+sehingga tidak ada orang lain yang dapat melihat
+
+149
+00:06:19.160 --> 00:06:21.625
+informasi yang dikirim dan diterima.
+
+150
+00:06:21.625 --> 00:06:24.500
+Ini dilakukan dengan menggunakan sesuatu yang disebut enkripsi.
+
+151
+00:06:24.500 --> 00:06:26.810
+Kami tidak akan membahas enkripsi sekarang.
+
+152
+00:06:26.810 --> 00:06:29.810
+Seperti di HTTP, permintaan dan tanggapan
+
+153
+00:06:29.810 --> 00:06:33.310
+masih berperilaku dengan cara yang sama dan memiliki konten yang sama.
+
+154
+00:06:33.310 --> 00:06:36.815
+Perbedaan besar adalah bahwa sebelum konten dikirim,
+
+155
+00:06:36.815 --> 00:06:39.185
+itu diubah menjadi kode rahasia.
+
+156
+00:06:39.185 --> 00:06:41.270
+Hanya komputer lain yang dapat
+
+157
+00:06:41.270 --> 00:06:43.820
+mengubah kode rahasia kembali ke konten aslinya.
+
+158
+00:06:43.820 --> 00:06:46.010
+Jika orang lain melihat kodenya,
+
+159
+00:06:46.010 --> 00:06:50.315
+itu tidak akan dapat dimengerti. Anda menggunakan HTTPS setiap hari.
+
+160
+00:06:50.315 --> 00:06:51.950
+Ini adalah ikon kunci yang Anda lihat
+
+161
+00:06:51.950 --> 00:06:54.710
+di samping URL di browser web Anda.
+
+162
+00:06:54.710 --> 00:06:56.900
+Sebelum saya selesai, saya ingin meninggalkan Anda dengan
+
+163
+00:06:56.900 --> 00:06:58.880
+ringkasan singkat HTTP.
+
+164
+00:06:58.880 --> 00:07:00.650
+Pertama, ini adalah protokol yang
+
+165
+00:07:00.650 --> 00:07:02.735
+digunakan oleh klien web dan server web.
+
+166
+00:07:02.735 --> 00:07:06.515
+Ia bekerja untuk mentransfer sumber daya web seperti file HTML,
+
+167
+00:07:06.515 --> 00:07:09.530
+dan merupakan dasar dari setiap pertukaran data di web.
+
+168
+00:07:09.530 --> 00:07:12.845
+Juga, ingat bahwa dengan menggunakan HTTPS,
+
+169
+00:07:12.845 --> 00:07:14.870
+kami mengirim informasi dengan aman.
+
+170
+00:07:14.870 --> 00:07:16.985
+Permintaan dikirim oleh klien,
+
+171
+00:07:16.985 --> 00:07:18.590
+biasanya browser web,
+
+172
+00:07:18.590 --> 00:07:21.470
+dan server membalas dengan tanggapan yang mungkin berupa
+
+173
+00:07:21.470 --> 00:07:24.515
+pengembalian gambar atau halaman HTML.
+
+174
+00:07:24.515 --> 00:07:28.355
+Permintaan HTTPS memiliki sintaks yang mencakup metode,
+
+175
+00:07:28.355 --> 00:07:30.640
+jalur, versi, dan header.
+
+176
+00:07:30.640 --> 00:07:34.640
+Respons HTTP mengikuti format yang mirip dengan permintaan.
+
+177
+00:07:34.640 --> 00:07:37.025
+Kode status HTTP menunjukkan apakah
+
+178
+00:07:37.025 --> 00:07:39.830
+permintaan HTTP berhasil diselesaikan.
+
+179
+00:07:39.830 --> 00:07:42.080
+Kode status adalah angka tiga digit yang
+
+180
+00:07:42.080 --> 00:07:43.880
+sesuai dengan grup yang mewakili
+
+181
+00:07:43.880 --> 00:07:45.445
+berbagai jenis hasil.
+
+182
+00:07:45.445 --> 00:07:47.540
+Nah, sekarang Anda tahu bagaimana
+
+183
+00:07:47.540 --> 00:07:50.615
+permintaan protokol HTTP dan siklus respons bekerja.
+
+184
+00:07:50.615 --> 00:07:52.940
+Anda tahu tentang metodenya dan elemen
+
+185
+00:07:52.940 --> 00:07:56.340
+yang membentuk permintaan HTTP. Kerja bagus.

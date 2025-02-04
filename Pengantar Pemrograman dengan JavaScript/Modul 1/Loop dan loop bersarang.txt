@@ -1,0 +1,138 @@
+Katakanlah saya ingin menampilkan tabel perkalian khusus.
+
+Ini adalah skenario kasus penggunaan yang sempurna untuk perulangan bersarang.
+
+Variabel penghitung perulangan luar akan bertindak sebagai angka pertama yang akan dikalikan, dan variabel penghitung perulangan dalam akan bertindak sebagai angka kedua yang akan dikalikan.
+
+Berikut kode saya:
+
+1234
+//single loop
+for (var firstNum = 0; firstNum < 2; firstNum++) {
+    console.log(firstNum);
+}
+Keluaran dari kode di atas adalah:
+
+0
+1
+
+Ini berarti perulangan for saya dimulai dari 0 dan berhenti setelah 1.
+
+Jadi sekarang saya bisa membuat kode yang nantinya akan menjadi perulangan dalam, yang variabel penghitungnya adalah angka kedua dalam perkalian ini:
+
+1234
+//single loop
+for (var secondNum = 0; secondNum < 10; secondNum++) {
+    console.log(secondNum);
+}
+Kali ini, keluarannya adalah:
+
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+
+Sekarang saatnya menggabungkan perulangan pertama dan kedua:
+
+123456
+//nested loops - one inside another
+for (var firstNum = 0; firstNum < 2; firstNum++) {
+    for (var secondNum = 0; secondNum < 10; secondNum++) {
+        console.log(firstNum + ", " + secondNum);
+    }
+}
+Sekarang saya menempatkan perulangan for kedua di dalam perulangan pertama, dan saya mencatat nilai kedua variabel penghitung saat perulangan berjalan, hasilnya terlihat seperti ini:
+
+0, 0
+0, 1
+0, 2
+0, 3
+0, 4
+0, 5
+0, 6
+0, 7
+0, 8
+0, 9
+1, 0
+1, 1
+1, 2
+1, 3
+1, 4
+1, 5
+1, 6
+1, 7
+1, 8
+1, 9
+
+Sekarang saya memiliki daftar semua angka yang akan dikalikan, mendapatkan hasil aktual dari perkalian ini semudah memperbarui panggilanconsole.log():
+
+123456
+//nested loops - one inside another
+for (var firstNum = 0; firstNum < 2; firstNum++) {
+    for (var secondNum = 0; secondNum < 10; secondNum++) {
+        console.log(firstNum + " times " + secondNum + " equals " + firstNum * secondNum);
+    }
+}
+Outputnya sekarang adalah:
+
+0 dikalikan 0 sama dengan 0
+0 kali 1 sama dengan 0
+0 kali 2 sama dengan 0
+0 kali 3 sama dengan 0
+0 kali 4 sama dengan 0
+0 kali 5 sama dengan 0
+0 kali 6 sama dengan 0
+0 kali 7 sama dengan 0
+0 kali 8 sama dengan 0
+0 kali 9 sama dengan 0
+1 kali 0 sama dengan 0
+1 kali 1 sama dengan 1
+1 kali 2 sama dengan 2
+1 kali 3 sama dengan 3
+1 kali 4 sama dengan 4
+1 kali 5 sama dengan 5
+1 kali 6 sama dengan 6
+1 kali 7 sama dengan 7
+1 kali 8 sama dengan 8
+1 kali 9 sama dengan 9
+
+Hal ini menghasilkan beberapa kombinasi yang sangat menarik.
+
+Sebagai contoh, saya dapat membuat tabel pembagian khusus:
+
+123456
+//nested loops - one inside another 
+for (var i = 100; i > 10; i = i - 10) {
+    for (var j = 10; j > 4; j = j - 5) {
+        console.log(i + " divided by " + j + " equals " + i / j);
+    }
+}
+Inilah keluaran dari perulangan bersarang di atas:
+
+100 dibagi 10 sama dengan 10
+100 dibagi 5 sama dengan 20
+90 dibagi 10 sama dengan 9
+90 dibagi 5 sama dengan 18
+80 dibagi 10 sama dengan 8
+80 dibagi 5 sama dengan 16
+70 dibagi 10 sama dengan 7
+70 dibagi 5 sama dengan 14
+60 dibagi 10 sama dengan 6
+60 dibagi 5 sama dengan 12
+50 dibagi 10 sama dengan 5
+50 dibagi 5 sama dengan 10
+40 dibagi 10 sama dengan 4
+40 dibagi 5 sama dengan 8
+30 dibagi 10 sama dengan 3
+30 dibagi 5 sama dengan 6
+20 dibagi 10 sama dengan 2
+20 dibagi 5 sama dengan 4
+
+Jangan ragu untuk mencoba beberapa kombinasi lain dari iterasi perulangan bersarang, dan lihat hasil seperti apa yang akan Anda dapatkan.
+

@@ -1,0 +1,85 @@
+Sebelum menginstal Node.js dan npm pada mesin Anda, Anda harus terlebih dahulu memverifikasi apakah sudah terinstal.  
+
+Memverifikasi instalasi yang sudah ada pada Windows
+Pada Windows, Anda dapat menggunakan tombol pintasanWINKEY+r, yang akan membuka jendela Run. Di dalam inputOpen: pada jendela Run, ketikcmd dan tekan tombol enter. Ini akan membuka prompt perintah.
+
+Di dalam prompt perintah, ketik:
+
+node --version
+
+Jika ada Node.js yang terinstal pada OS Windows Anda, ia akan mengembalikan nilai yang mirip dengan ini:
+
+v16.14.2  
+
+Kemudian Anda dapat mengonfirmasi bahwa Anda memiliki npm juga, dengan menjalankan ini:
+
+npm --version  
+
+Jika npm telah terinstal, Anda akan mendapatkan keluaran yang serupa dengan ini:
+
+8.5.0
+
+Memverifikasi instalasi Node.js dan npm yang sudah ada di Ubuntu (Linux)
+Anda dapat dengan cepat membuka jendela bash (terminal) baru di Ubuntu dengan menekan tombol pintasanCTRL+ALT+t.
+
+Pada jendela bash yang terbuka, ketik:
+
+node --version && npm --version
+
+Kedua nomor versi akan muncul di jendela bash.  
+
+
+Menginstal Node.js dan npm
+Pada OS Windows
+Jika Node.js dan npm tidak terinstal pada OS Windows Anda,
+buka
+ https://nodejs.org. 
+
+Cari tombol unduh yang besar, yang mencantumkan versi LTS. Pada Mei 2022, versi LTS yang tersedia untuk diunduh adalah 16.15.0.
+
+
+Di Mac OS - XCode
+Untuk menginstal brew, Anda perlu menginstal Xcode terlebih dahulu. Homebrew tidak dilengkapi dengan kompilatornya sendiri dan perlu menginstal Xcode agar dapat bekerja dengan baik. Untuk menginstal Xcode lakukan hal berikut:
+
+Buka sebuah terminal.
+
+Jalankan perintah berikut:
+
+shell xcode-select --install
+
+Sebuah popup akan muncul meminta Anda untuk mengonfirmasi instalasi. Klik pada tombol Instal.
+
+Setujui perjanjian lisensi.
+
+menyeduh
+Mac tidak dilengkapi dengan manajer paket seperti kebanyakan distribusi Linux. Untuk mengatasinya, sebuah alat eksternal yang disebut brew diciptakan. Untuk menginstal brew, kunjungi situs web resmi ( 
+https://brew.sh/
+ ) dan salin perintah yang disediakan, buka terminal dan jalankan perintah tersebut:
+
+1
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+Setelah Brew terinstal, Anda dapat menjalankan perintah berikut di terminal
+
+brew install node  
+
+Homebrew akan mengunduh dan menginstal dependensi, setelah selesai, konfirmasikan instalasi dengan mengetik 
+
+node -v
+
+Ini akan menampilkan versi Node.js
+
+Ketik :
+
+ npm -v
+
+untuk menampilkan nomor versi NPM.
+
+Di Ubuntu
+Gunakan tombol pintasanCTRL+ALT+t untuk membuka jendela bash baru, lalu jalankan perintah berikut:
+
+sudo apt update 
+
+sudo apt install nodejs  
+
+
+Selesai, Anda sudah siap.

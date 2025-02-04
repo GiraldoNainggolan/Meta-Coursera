@@ -1,0 +1,289 @@
+Pada akhir bacaan ini, Anda seharusnya dapat menjelaskan, dengan contoh, konsep memperluas kelas menggunakan pewarisan dasar untuk mengubah perilaku di dalam kelas anak.
+
+Sekarang, Anda harus tahu bahwa pewarisan dalam JavaScript didasarkan pada objek prototipe.
+
+Semua objek yang dibangun dari prototipe memiliki fungsionalitas yang sama.
+
+Ketika Anda perlu membuat kode hubungan OOP yang lebih kompleks, Anda dapat menggunakan kata kunciclass dan sintaks yang mudah dimengerti dan mudah dipahami.
+
+Bayangkan Anda perlu mengkodekan kelasTrain.
+
+Setelah Anda mengkodekan kelas ini, Anda akan dapat menggunakan kata kuncinew untuk menginstansiasi objek-objek dari kelasTrain.
+
+Untuk saat ini, Anda harus mendefinisikan kelasTrain terlebih dahulu, dengan menggunakan sintaks berikut:
+
+1
+class Train {}
+Jadi, Anda menggunakan kata kunciclass, lalu tentukan nama kelas Anda, dengan huruf pertama menggunakan huruf besar, dan kemudian Anda menambahkan tanda kurung kurawal pembuka dan kurung kurawal penutup.
+
+Di antara tanda kurung kurawal, bagian pertama dari kode yang perlu Anda definisikan adalahkonstruktor:
+
+12345
+class Train {
+    constructor() {
+
+    }
+}
+constructor akan digunakan untuk membangun properti pada instance objek yang akan datang dari kelasTrain.
+
+Untuk saat ini, katakanlah hanya ada dua properti yang harus dimiliki oleh setiap instance objek dari kelasTrain pada saat diinstansiasi:color danlightsOn.
+
+123456
+class Train {
+    constructor(color, lightsOn) {
+        this.color = color;
+        this.lightsOn = lightsOn;
+    }
+}
+Perhatikan sintaks dari konstruktor. Konstruktor adalah fungsi khusus dalam kelasTrain.
+
+Pertama-tama, perhatikan bahwa tidak ada kata kuncifunction. Juga, perhatikan bahwa kata kunciconstructor digunakan untuk mendefinisikan fungsi ini. Anda memberikan parameter fungsiconstructor di dalam tanda kurung pembuka dan penutup, sama seperti pada fungsi biasa. Nama parameternya adalahcolor danlightsOn.  
+
+Selanjutnya, di dalam badan fungsiconstructor, Anda menetapkan nilai parametercolor yang dimasukkan kethis.color, dan nilai parameterlightsOn yang dimasukkan kethis.lightsOn.
+
+Apa yang diwakili oleh kata kuncithis di sini?
+
+Ini adalah instance objek masa depan dari kelasTrain.
+
+Pada dasarnya, ini adalah semua kode yang perlu Anda tulis untuk mencapai dua hal: 
+
+Kode ini memungkinkan saya untuk membuatinstance baru dari kelasTrain. 
+
+Setiap instance objek dari kelasTrain yang saya buat akan memiliki properti khusus daricolor danlightsOn.
+
+Sekarang, untuk membuat instance baru dari kelasTrain, saya perlu menggunakan sintaks berikut ini:
+
+1
+new Train()
+Di dalam tanda kurung, Anda perlu mengoper nilai seperti"red" danfalse, misalnya, yang berarti bahwa properticolor disetel ke"red" dan propertilightsOn disetel kefalse.
+
+Dan, untuk dapat berinteraksi dengan objek baru yang dibuat dengan cara ini, Anda harus menetapkannya ke sebuah variabel.
+
+Setelah semuanya selesai, inilah kereta pertama Anda:
+
+1
+var myFirstTrain = new Train('red', false);
+Sama seperti variabel lainnya, Anda sekarang dapat, misalnya, mencatat konsol objekmyFirstTrain:
+
+1
+console.log(myFirstTrain); // Train {color: 'red', lightsOn: false}
+Anda dapat terus membuat instance dari kelasTrain. Meskipun Anda memberikan properti yang sama persis, mereka masih merupakan objek yang terpisah.
+
+12
+var mySecondTrain = new Train('blue', false);
+var myThirdTrain = new Train('blue', false);
+Namun, tidak hanya itu saja yang dapat ditawarkan oleh kelas.
+
+Anda juga bisa menambahkan metode ke kelas, dan metode ini akan digunakan bersama oleh semua objek contoh dari kelasTrain di masa depan.
+
+Sebagai contoh:
+
+12345678910111213141516171819
+class Train {
+    constructor(color, lightsOn) {
+        this.color = color;
+        this.lightsOn = lightsOn;
+    }
+    toggleLights() {
+        this.lightsOn = !this.lightsOn;
+    }
+    lightsStatus() {
+        console.log('Lights on?', this.lightsOn);
+
+Sekarang, ada empat metode pada kelasTrain Anda:
+toggleLights(),lightsStatus(),getSelf() dangetPrototype().
+
+MetodetoggleLights menggunakan operator logika not,!. Operator ini akan mengubah nilai yang tersimpan di propertilightsOn dari objek instance yang akan datang dari kelasTrain; sehingga menjadi!this.lightsOn. Dan operator= di sebelah kirinya berarti bahwa operator tersebut akan ditugaskan kethis.lightsOn, yang berarti bahwa operator tersebut akan menjadi nilai baru dari propertilightsOn pada objek instance yang diberikan.
+
+MetodelightsStatus() pada kelasTrain hanya melaporkan status saat ini dari variabellightsOn dari instance objek yang diberikan.
+
+MetodegetSelf() mencetak properti pada instance objek yang dipanggil.
+
+KonsolgetPrototype() mencatat prototipe dari instance objek kelasTrain. Prototipe menyimpan semua properti yang dimiliki oleh semua instance objek dari kelasTrain. Untuk mendapatkan prototipe, Anda akan menggunakan metodeObject.getPrototypeOf() bawaan JavaScript, dan mengoperkan objekthis- yang berarti, contoh objek di mana metode ini dipanggil.
+
+Sekarang Anda dapat membuat kereta api baru menggunakan kelasTrain yang telah diperbarui ini:
+
+1
+var train4 = new Train('red', false);
+Dan sekarang, Anda dapat menjalankan setiap metodenya, satu per satu, untuk mengonfirmasi perilakunya:
+
+1234
+train4.toggleLights(); // undefined
+train4.lightsStatus(); // Lights on? true
+train4.getSelf(); // Train {color: 'red', lightsOn: true}
+train4.getPrototype(); // {constructor: f, toggleLights: f, ligthsStatus: f, getSelf: f, getPrototype: f}
+Hasil dari pemanggilantoggleLights() adalah perubahan nilai true menjadi false dan sebaliknya, untuk propertilightsOn.
+
+Hasil dari pemanggilanlightsStatus() adalah pencatatan konsol dari nilai propertilightsOn.
+
+Hasil pemanggilangetSelf() adalah pencatatan konsol dari seluruh contoh objek di mana metodegetSelf() dipanggil. Dalam kasus ini, objek yang dikembalikan adalah objektrain4. Perhatikan bahwa objek ini dikembalikan hanya dengan properti ("data") yang dibangun menggunakan fungsiconstructor() dari kelasTrain. Hal ini karena semua metode pada kelasTrain tidak "hidup" pada salah satu objek instance dari kelasTrain- sebaliknya, metode-metode tersebut hidup pada prototipe, seperti yang akan dikonfirmasi pada paragraf berikutnya.
+
+Terakhir, hasil dari pemanggilan metodegetPrototype() adalah pencatatan konsol dari semua properti padaprototype. Ketika sintaksclass digunakan dalam JavaScript, hal ini menghasilkanhanya metode bersama yang disimpan pada prototipe, sedangkan fungsiconstructor() mengatur mekanisme untuk menyimpan nilai spesifik contoh ("data") pada saat instantiasi objek.
+
+Jadi, sebagai kesimpulan, sintaksis kelas dalam JavaScript memungkinkan kita untuk memisahkan dengan jelas data objek individual - yang ada pada instance objek itu sendiri - dari fungsionalitas objek bersama (metode), yang ada pada prototipe dan digunakan oleh semua instance objek.
+
+Namun, ini bukan keseluruhan cerita.
+
+Hal ini dimungkinkan untuk mengimplementasikan polimorfisme menggunakan kelas dalam JavaScript, dengan mewarisi dari kelas dasar dan kemudian mengesampingkan perilaku yang diwarisi. Untuk memahami cara kerjanya, yang terbaik adalah menggunakan sebuah contoh.
+
+Pada kode berikut ini, Anda akan melihat kelas lain yang sedang dikodekan, yang diberi namaHighSpeedTrain dan diwarisi dari kelasTrain.
+
+Hal ini membuat kelasTrain menjadi kelas dasar, atau kelas super dari kelasHighSpeedTrain. Dengan kata lain, kelasHighSpeedTrain menjadi sub-kelas dari kelasTrain, karena mewarisi dari kelas tersebut.
+
+Untuk mewarisi dari satu kelas ke sub-kelas baru, JavaScript menyediakan kata kunciextends, yang berfungsi sebagai berikut:
+
+12
+class HighSpeedTrain extends Train {
+}
+Seperti pada contoh di atas, sintaks sub-kelas konsisten dengan bagaimana kelas dasar didefinisikan dalam JavaScript. Satu-satunya tambahan di sini adalah kata kunciextends, dan nama kelas yang diwarisi oleh sub-kelas.
+
+Sekarang Anda dapat mendeskripsikan cara kerjaHighSpeedTrain. Sekali lagi, Anda dapat memulai dengan mendefinisikan fungsi konstruktornya:
+
+1234567
+class HighSpeedTrain extends Train {
+    constructor(passengers, highSpeedOn, color, lightsOn) {
+        super(color, lightsOn);
+        this.passengers = passengers;
+        this.highSpeedOn = highSpeedOn;
+    }
+}
+Perhatikan sedikit perbedaan sintaks pada konstruktor kelasHighSpeedTrain, yaitu penggunaan kata kuncisuper.
+
+Pada kelas JavaScript,super digunakan untuk menentukan properti apa yang akan diwarisi dari super-kelas di dalam sub-kelas.
+
+Dalam kasus ini, saya memilih untuk mewarisi kedua properti dari super-kelasTrain dalam sub-kelasHighSpeedTrain.
+
+Properti ini adalahcolor danlightsOn.
+
+Selanjutnya, Anda menambahkan properti tambahan dari kelas HighSpeedTrain di dalam konstruktornya, yaitu properti penumpang dan highSpeedOn.
+
+Selanjutnya, di dalam badan konstruktor, Anda menggunakan kata kuncisuper dan mengoperkan properticolor danlightsOn yang diwarisi dari kelasTrain. Pada baris berikutnya Anda menetapkanpassengers kethis.passengers, danhighSpeedOn kethis.highSpeedOn.
+
+Perhatikan bahwa selain properti yang diwarisi, Anda jugasecara otomatis mewarisi semua metode yang ada pada prototipeTrain, yaitu metodetoggleLights(),lightsStatus(),getSelf(), dangetPrototype().
+
+Sekarang mari kita tambahkan metode lain yang akan dikhususkan untuk kelasHighSpeedTrain: metodetoggleHighSpeed().
+
+1234567891011
+class HighSpeedTrain extends Train {
+    constructor(passengers, highSpeedOn, color, lightsOn) {
+        super(color, lightsOn);
+        this.passengers = passengers;
+        this.highSpeedOn = highSpeedOn;
+    }
+    toggleHighSpeed() {
+        this.highSpeedOn = !this.highSpeedOn;
+        console.log('High speed status:', this.highSpeedOn);
+    }
+
+Sebagai tambahan, bayangkan Anda menyadari bahwa Anda tidak menyukai cara kerja metodetoggleLights() dari kelas super, dan Anda ingin mengimplementasikannya sedikit berbeda di dalam sub-kelas. Anda dapat menambahkannya di dalam kelasHighSpeedTrain. 
+
+12345678910111213141516
+class HighSpeedTrain extends Train {
+    constructor(passengers, highSpeedOn, color, lightsOn) {
+        super(color, lightsOn);
+        this.passengers = passengers;
+        this.highSpeedOn = highSpeedOn;
+    }
+    toggleHighSpeed() {
+        this.highSpeedOn = !this.highSpeedOn;
+        console.log('High speed status:', this.highSpeedOn);
+    }
+
+Jadi, bagaimana Anda mengganti perilaku metodetoggleLights() yang asli?
+
+Di dalam kelas super, metodetoggleLights() didefinisikan sebagai berikut:
+
+123
+toggleLights() {
+    this.lightsOn = !this.lightsOn;
+}
+Anda menyadari bahwa metodeHighSpeedTrain harus menggunakan kembali perilaku yang ada dari metodetoggleLights() yang asli, sehingga Anda menggunakan sintakssuper.toggleLights() untuk mewarisi seluruh metode kelas super.
+
+Selanjutnya, Anda juga mewarisi perilaku metodelightsStatus() dari kelas super - karena Anda menyadari bahwa Anda ingin status terbaru dari propertilightsOn dicatat ke konsol, setiap kali Anda memanggil metodetoggleLights() di dalam sub-kelas.
+
+Terakhir, Anda juga menambahkan baris ketiga dalam metodetoggleLights() yang diimplementasikan ulang, yaitu:
+
+1
+console.log('Lights are 100% operational.');
+Anda telah menambahkan baris ketiga ini untuk menunjukkan bahwa saya dapat menggabungkan kode metode "pinjaman" dari super-kelas dengan kode kustom Anda sendiri di dalam sub-kelas.
+
+Sekarang Anda siap untuk membuat beberapa objek kereta api.
+
+12
+var train5 = new Train('blue', false);
+var highSpeed1 = new HighSpeedTrain(200, false, 'green', false);
+Anda telah membuat objektrain5 dari kelasTrain, dan mengaturcolor ke"blue" danlightsOn kefalse.
+
+Selanjutnya, Anda telah membuat objekhighSpeed1 pada kelasHighSpeedTrain, dengan mengaturpassengers menjadi200,highSpeedOn menjadifalse,color menjadi"green", dan lightsOn menjadi false.
+
+Sekarang Anda dapat menguji perilakutrain5, dengan memanggil, misalnya, metodetoggleLights(), lalu metodelightsStatus():
+
+12
+train5.toggleLights(); // undefined
+train5.lightsStatus(); // Lights on? true
+Berikut adalah seluruh kode yang telah selesai untuk pelajaran ini:
+
+12345678910111213141516171819202122232425262728293031323334353637383940
+class Train {
+    constructor(color, lightsOn) {
+        this.color = color;
+        this.lightsOn = lightsOn;
+    }
+    toggleLights() {
+        this.lightsOn = !this.lightsOn;
+    }
+    lightsStatus() {
+        console.log('Lights on?', this.lightsOn);
+
+Perhatikan bagaimana metodetoggleLights() berperilaku berbeda pada kelasHighSpeedTrain dibandingkan dengan kelasTrain.
+
+Selain itu, akan sangat membantu untuk memvisualisasikan apa yang terjadi dengan mendapatkan prototipe dari kedua kereta apitrain5 danhighSpeed1:
+
+12
+train5.getPrototype(); // {constructor: ƒ, toggleLights: ƒ, lightsStatus: ƒ, getSelf: ƒ, getPrototype: ƒ}
+highSpeed1.getPrototype(); // Train {constructor: ƒ, toggleHighSpeed: ƒ, toggleLights: ƒ}
+Nilai yang dikembalikan dalam kasus ini mungkin awalnya tampak agak rumit untuk dipahami, tetapi sebenarnya, ini cukup sederhana: 
+
+Objek prototipe dari objektrain5 dibuat ketika Anda mendefinisikan kelasTrain. Anda bisa mengakses prototipe menggunakan sintaksTrain.prototype dan mendapatkan objek prototipe kembali. 
+
+Objek prototipe dari objekhighSpeed1 adalah objek ini: {constructor: ƒ, toggleHighSpeed: ƒ, toggleLights: ƒ}. Pada gilirannya, objek ini memiliki prototipe sendiri, yang dapat ditemukan dengan menggunakan sintaks berikut:HighSpeedTrain.prototype.__proto__. Menjalankan kode ini akan menghasilkan:{constructor: ƒ, toggleLights: ƒ, lightsStatus: ƒ, getSelf: ƒ, getPrototype: ƒ}.
+
+Prototipe tampak mudah dipahami pada tingkat tertentu, tetapi mudah tersesat dalam kerumitannya. Inilah salah satu alasan mengapa sintaksis kelas dalam JavaScript meningkatkan pengalaman pengembang Anda, dengan membuatnya lebih mudah untuk bernalar tentang hubungan antar kelas. Namun, saat Anda meningkatkan keterampilan Anda, Anda harus selalu berusaha untuk memahami alat Anda dengan lebih baik, dan ini termasuk prototipe. Bagaimanapun juga, JavaScript hanyalah sebuah alat, dan Anda sekarang telah "mengintip di balik tirai".
+
+Dalam bacaan ini, Anda telah mempelajari esensi dari cara kerja OOP dengan kelas dalam JavaScript. Namun, ini belum semuanya. 
+
+Dalam pelajaran mendesain program berorientasi objek, Anda akan mempelajari beberapa konsep yang lebih berguna. Sebagian besar konsep ini berkaitan dengan pengkodean kelas-kelas Anda sehingga lebih mudah untuk membuat instance objek dari kelas-kelas tersebut dalam JavaScript.
+
+Menggunakan instance kelas sebagai properti konstruktor kelas lain
+
+Perhatikan contoh berikut ini:
+
+123456789101112131415161718192021222324252627
+class StationaryBike {
+    constructor(position, gears) {
+        this.position = position
+        this.gears = gears
+    }
+}
+
+class Treadmill {
+    constructor(position, modes) {
+        this.position = position
+
+Atur ulang
+Dalam contoh ini, ada tiga kelas yang didefinisikan: StationaryBike, Treadmill, dan Gym.
+
+Kelas StationaryBike dikodekan sehingga instance objeknya di masa depan akan memiliki properti position dan gears. Properti position menjelaskan di mana sepeda statis akan ditempatkan di dalam gym, dan properti gears memberikan jumlah roda gigi yang harus dimiliki sepeda statis tersebut.
+
+Kelas Treadmill juga memiliki posisi, dan properti lain, bernama modes (seperti pada "mode latihan").
+
+Kelas Gym memiliki tiga parameter dalam fungsi konstruktornya: openHrs, stationaryBikePos, treadmillPos.
+
+Kode ini memungkinkan saya untuk menginstansiasi objek instance baru dari kelas Gym, dan ketika saya memeriksanya, saya mendapatkan informasi berikut:
+
+properti openHrs sama dengan "7-22" (yaitu, jam 7 pagi sampai jam 10 malam)
+
+properti stationaryBike adalah objek dari tipe StationaryBike, yang berisi dua properti: position dan gears
+
+properti treadmill adalah objek dengan tipe Treadmill, berisi dua properti: position dan modes
+

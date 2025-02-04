@@ -1,0 +1,92 @@
+Dalam bacaan ini, kita akan membahas, pada tingkat yang sangat tinggi, alasan untuk menggunakan perulangan dalam JavaScript.
+
+Harap dicatat bahwa kami akan menjaga diskusi ini tetap pada tingkat yang tinggi karena ada beberapa "potongan teka-teki" yang masih belum Anda pahami saat ini.
+
+Inilah sebabnya mengapa kita tidak akan terjebak dalam detail sintaks dan implementasi, tetapi sebaliknya, hanya membahas bagaimana dan mengapa loop digunakan dalam pekerjaan sehari-hari pengembang JavaScript.
+
+Perhatikan contoh berikut ini: Anda bekerja sebagai pengembang untuk sebuah toko online.
+
+Toko tersebut menjual kubus huruf untuk balita, dan seluruh bagian "Belanja sekarang" di situs tersebut diatur dalam tata letak di mana setiap kubus yang dijual ditampilkan dalam komponen kartu sederhana, dengan gambar kubus, huruf yang diajarkan, deskripsi singkat, dan harga.
+
+Kartu disusun dalam baris, sehingga setiap baris berisi tiga kartu - tiga huruf yang berbeda.
+
+Setiap kartu adalah pratinjau dari kubus huruf tertentu yang dijual, dan juga merupakan tautan ke seluruh halaman, yang didedikasikan untuk memberikan lebih banyak informasi tentang kubus, nilai pengajarannya, dan menyediakan cara bagi pengunjung untuk menyelesaikan proses pembayaran.
+
+Sekarang, inilah pertanyaan singkatnya: di mana letak loop yang cocok untuk menampilkan kisi-kisi kartu yang menampilkan kubus huruf yang dijual?
+
+Untuk memahami cara kerjanya, izinkan saya membuat prototipe dasar tentang bagaimana hal ini dapat bekerja.
+
+Karena Anda masih belum memiliki pengetahuan yang cukup untuk menampilkan tata letak situs web di browser dengan bantuan JavaScript, untuk saat ini saya harus puas menggunakan string sederhana dan konsol.
+
+Namun, ini akan menjadi latihan yang menyenangkan.
+
+123456
+var cubes = 'ABCDEFG';
+//styling console output using CSS with a %c format specifier
+for (var i = 0; i < cubes.length; i++) {
+    var styles = "font-size: 40px; border-radius: 10px; border: 1px solid blue; background: pink; color: purple";
+    console.log("%c" + cubes[i], styles)
+}
+Atur ulang
+Catatan: Untuk menerapkan gaya, coba jalankan cuplikan kode ini di konsol peramban Anda.
+
+Itu saja, dengan kode sederhana ini, output di konsol menunjukkan setiap huruf pada baris yang terpisah, ditata seperti kubus huruf untuk balita.
+
+Kode itu sendiri seharusnya sudah tidak asing lagi, kecuali untuk sintakscubes.length dancubes[i].
+
+Tanpa membahas terlalu banyak detail, berikut ini adalah kedua potongan kode yang dijelaskan sesederhana mungkin.
+
+cubes.length mengembalikan sebuah angka. Karenacubes adalah sebuah string karakter, makacubes.length memberikan saya panjang string yang disimpan di dalam variabel.
+
+Jadi, ini memberi saya angka 7, yang secara efektif membuat perulangan for saya terlihat seperti ini:
+
+645123
+var cubes = 'ABCDEFG';
+//styling console output using CSS with a %c format specifier
+for (var i = 0; i < 7; i++) {
+    var styles = "font-size: 40px; border-radius: 10px; border: 1px solid blue; background: pink; color: purple";
+    console.log("%c" + cubes[i], styles)
+}
+Menata keluaran konsol
+Bagian kedua dari kode yang baru di sini adalah potongancubes[i].
+
+Ini hanya menargetkan setiap huruf dalam perulangan, berdasarkan nilai saat ini dari variabeli.
+
+Dengan kata lain,cubes[i], ketikai sama dengan0, adalah:A.
+
+Kemudian,cubes[i], ketikai sama dengan1, adalah:B.
+
+Ini berlangsung sebanyak perulangan yang dilakukan perulangan for saya - dan ini ditentukan oleh nilaicubes.length.
+
+Ini juga sangat serbaguna, karena, jika saya, misalnya, memutuskan untuk mengubah panjang stringcubes, saya tidak perlu memperbarui kondisii < cubes.length, karena akan diperbarui secara otomatis ketika saya mengubah panjang stringcubes.
+
+Ada beberapa cara lain untuk menyimpan data dalam aplikasi JavaScript yang belum pernah Anda dengar.
+
+Tetapi kita dapat menggunakan pendekatan yang sama dengan jenis data lain tersebut, untuk mencapai hasil yang pada dasarnya bekerja dengan prinsip yang sama dengan yang baru saja dijelaskan.
+
+Menggunakan perulangan adalah inti dari pendekatan yang dilakukan dalam mengembangkan berbagai macam fungsionalitas dalam perangkat lunak saat ini.
+
+Beberapa contoh tambahan
+Jika saya membuat coding klien email, saya akan mendapatkan beberapa data terstruktur tentang email yang akan ditampilkan di kotak masuk, kemudian saya akan menggunakan perulangan untuk menampilkannya dengan cara yang diformat dengan baik.
+
+Jika saya membuat coding situs e-commerce yang menjual mobil, saya akan mendapatkan sumber data yang terstruktur dengan baik untuk setiap mobil, lalu mengulang data tersebut untuk menampilkannya di layar.
+
+Jika saya sedang membuat kode untuk kalender online, saya akan mengulang-ulang data yang ada di setiap hari untuk menampilkan kalender yang terformat dengan baik.
+
+Ada banyak sekali contoh lain dari penggunaan perulangan dalam kode.
+
+Menggunakan perulangan dengan data yang diformat dengan benar untuk tugas tertentu adalah komponen penting dalam membangun perangkat lunak.
+
+Dalam pelajaran selanjutnya, kita akan belajar tentang berbagai cara untuk mengelompokkan data terkait dan menampilkannya di layar menggunakan JavaScript.
+
+Ketika digabungkan dengan apa yang telah Anda pelajari tentang perulangan, hal ini akan memberikan Anda keterampilan untuk membangun berbagai jenis antarmuka pengguna yang memiliki informasi yang berulang.
+
+Beberapa contoh yang lebih spesifik meliputi:
+
+mengulang judul posting blog dalam beberapa data terstruktur, dan menampilkan setiap judul posting blog di halaman beranda blog
+
+perulangan pada postingan media sosial dalam beberapa data terstruktur, dan menampilkan setiap postingan media sosial berdasarkan beberapa kondisi
+
+mengulang beberapa data terstruktur tentang pakaian yang tersedia untuk dijual di toko pakaian online, dan menampilkan data yang relevan untuk setiap item pakaian
+
+Sekarang Anda telah memahami pentingnya mengetahui cara bekerja dengan perulangan dalam JavaScript. Di pelajaran selanjutnya, kita akan mempelajari informasi relevan lainnya yang memungkinkan Anda untuk dapat melakukan hal ini.

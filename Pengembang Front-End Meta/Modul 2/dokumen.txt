@@ -1,0 +1,44 @@
+Sumber Daya TambahanStatus: Diterjemahkan secara otomatis dari bahasa Bahasa Inggris
+Diterjemahkan secara otomatis dari bahasa Bahasa Inggris
+Informasi:Item ini mencakup konten yang belum diterjemahkan ke bahasa pilihan Anda.
+Pelajari lebih lanjut
+Berikut ini adalah daftar sumber daya yang dapat membantu Anda dalam melanjutkan perjalanan belajar Anda.
+
+Referensi Elemen HTML (Mozilla)
+
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element
+
+Elemen Formulir (Mozilla)
+
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form
+
+Apa yang dimaksud dengan Model Objek Dokumen? (W3C)
+
+https://www.w3.org/TR/WD-DOM/introduction.html
+
+ARIA dalam HTML (W3C via Github)
+
+https://w3c.github.io/html-aria/
+
+Praktik Penulisan ARIA (W3C)
+
+https://www.w3.org/TR/wai-aria-practices-1.2/
+
+
+
+
+Pelajari lebih lanjut
+Berikut ini adalah daftar sumber daya yang dapat membantu Anda dalam melanjutkan perjalanan belajar Anda.
+
+Referensi CSS (Mozilla)
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/Reference
+
+HTML dan CSS: Merancang dan membangun situs web oleh Jon Duckett
+
+https://www.amazon.com/HTML-CSS-Design-Build-Websites/dp/1118008189/
+
+Panduan Definitif CSS oleh Eric Meyer 
+
+https://www.amazon.com/CSS-Definitive-Guide-Visual-Presentation/dp/1449393195/
+

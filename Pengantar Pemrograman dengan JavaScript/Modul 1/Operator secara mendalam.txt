@@ -1,0 +1,291 @@
+Dalam bacaan ini, Anda akan belajar tentang operator tambahan, prioritas operator, dan keterkaitan operator. Saya juga akan memberikan beberapa contoh operator logika.
+
+1. Operator tambahan
+Operator logika AND:&&
+
+Operator logika OR:||
+
+Operator logika NOT:!
+
+Operator modulus:%
+
+Operator kesetaraan: ==
+
+Operator kesetaraan yang ketat: ===
+
+Operator pertidaksamaan: !=
+
+Operator pertidaksamaan yang ketat: !==
+
+Operator penugasan penjumlahan:+=
+
+Operator penugasan penggabungan:+=(sama seperti operator sebelumnya - akan dibahas lebih lanjut nanti)
+
+Operator logika AND dalam JavaScript:&&
+Operator logika AND, misalnya, digunakan untuk mengonfirmasi apakah beberapa perbandingan akan menghasilkan nilai benar.
+
+Dalam JavaScript, operator ini terdiri dari dua simbol ampersand secara bersamaan:&&.
+
+Katakanlah Anda ditugaskan untuk membuat kode yang akan memeriksa apakah variabelcurrentTime berada di antara9 a.m. dan5 p.m. Kode tersebut perlu console.logtrue jikacurrentTime > 9dan jikacurrentTime < 17.
+
+Inilah solusinya: 
+
+12
+var currentTime = 10;
+console.log(currentTime > 9 && currentTime < 17);
+Bagaimana cara kerja kode ini?
+
+Pertama, pada baris pertama, saya mengatur variabelcurrentTime, dan menetapkan nilai10 padanya.
+
+Selanjutnya, pada baris kedua saya melakukan konsol log dua perbandingan: 
+
+currentTime > 9
+
+currentTime < 17
+
+Saya juga menggunakan operator logika&& untuk menggabungkan dua perbandingan.
+
+Secara efektif, kode saya ditafsirkan sebagai berikut:
+
+1
+console.log(10 > 9 && 10 < 17);
+Perbandingan10 > 9 akan menghasilkantrue.
+
+Juga, perbandingan10 < 17 akan menghasilkantrue.
+
+Ini berarti saya dapat menulis ulang baris kedua dari solusi saya sebagai berikut: 
+
+1
+console.log(true && true);
+Intinya, beginilah cara kerja kode saya.
+
+Sekarang, pertanyaannya adalah, apa yang akan menjadi hasil dariconsole.log(true && true)?
+
+Untuk memahami jawabannya, Anda perlu mengetahui perilaku operator logika&&.
+
+Operator logika&& mengembalikan satu nilai: booleantrue ataufalse, berdasarkan aturan berikut: 
+
+Operator ini mengembalikantrue jika kedua nilai di sebelah kanan dan di sebelah kirinya dievaluasi menjaditrue
+
+Ini mengembalikanfalse dalam semua contoh lainnya
+
+Dengan kata lain: 
+
+console.log(true && true)akan menghasilkan:true
+
+console.log(true && false)akan menghasilkan:false
+
+console.log(false && true)akan menghasilkan:false
+
+console.log(false && false)akan menghasilkan:false
+
+Operator logika OR dalam JavaScript:||
+Operator logika OR dalam JavaScript terdiri dari dua simbol pipa yang digabungkan menjadi satu:||.
+
+Operator ini digunakan ketika Anda ingin memeriksa apakah setidaknya salah satu dari perbandingan yang diberikan bernilaitrue.
+
+Pertimbangkan tugas berikut: Anda perlu menulis program dalam JavaScript yang akan mengembalikantrue jika nilai variabelcurrentTime tidak berada di antara9 dan17. Dengan kata lain, kode Anda perlu console.logtrue jika nilai variabelcurrentTime kurang dari9 atau lebih besar dari17.
+
+Inilah solusinya: 
+
+12
+var currentTime = 7;
+console.log(currentTime < 9 || currentTime > 17);
+Pada baris pertama kode saya menetapkan angka7 ke variabelcurrentTime.
+
+Pada baris kedua, saya mencatat hasil pengecekan apakahcurrentTime < 9 ataucurrentTime > 17 akan bernilai sama dengantrue.
+
+Sama saja seperti ini: 
+
+12
+var currentTime = 7;
+console.log(true || false);
+Berikut adalah aturan tentang bagaimana operator|| mengevaluasi nilai yang diberikan: 
+
+console.log(true || true)akan menghasilkan:true
+
+console.log(true || false)akan menghasilkan:true
+
+console.log(false || true)akan menghasilkan:true
+
+console.log(false || false)akan menghasilkan:false
+
+Operator logika OR akan selalu mengembalikantrue, kecuali jika kedua sisi dievaluasi kefalse. Dengan kata lain, agar operator logika OR menghasilkanfalse, hasil dari kedua perbandinganharus bernilai salah.
+
+Kembali ke contoh pengecekan apakahcurrentTime < 9 ataucurrentTime > 17, ini masuk akal: satu-satunya waktu Anda akan mendapatkanfalse adalah ketika nilai yang disimpan dalam variabelcurrentTime lebih besar dari9 dan lebih kecil dari17.
+
+Operator logika NOT:!
+Dalam JavaScript, simbol operator logika NOT adalah tanda seru:!.
+
+Anda dapat menganggap operator! sebagai sakelar, yang membalik nilai boolean yang dievaluasi daritrue kefalse dan darifalse ketrue.
+
+Sebagai contoh, jika saya menetapkan nilai boolean dari true ke variabel petHungry: 
+
+var petHungry = true;
+
+... maka saya dapat mencatat fakta bahwa hewan peliharaan tidak lagi lapar dengan menggunakan operator ! untuk membalik nilai boolean yang tersimpan di dalam variabel petHungry, seperti ini:
+
+console.log('Feeding the pet');
+console.log("Pet is hungry: ", !petHungry);
+console.log(petHungry);
+
+Ini adalah keluaran dari kode di atas:   
+
+1234
+Pet is hungry: true
+Feeding the pet
+Pet is hungry: false
+true
+Alasan dari perubahan output di konsol adalah karena Anda telah membalik nilai yang tersimpan di dalam variabelpetHungry, daritrue kefalse.
+
+Namun, perhatikan bahwa kode pada baris kelima dari contoh di atas masih menghasilkan keluarantrue- hal ini disebabkan karena saya tidak mengubah nilai variabelpetHungry.
+
+Berikut ini adalah cara untuk mengubah nilai yang tersimpan di variabelpetHungry secara permanen daritrue kefalse: 
+
+12
+var petHungry = true;
+petHungry = !petHungry;
+Dalam contoh ini, pertama-tama saya menetapkan nilaitrue ke variabel barupetHungry. Kemudian, pada baris kedua, saya menetapkan nilai yang berlawanan, yaitu!true- baca: tidak benar - ke variabelpetHungry yang sudah ada.
+
+Operator modulus:%
+Operator modulus adalah operator matematika lain dalam JavaScript. Operator ini mengembalikan sisa pembagian.
+
+Untuk mendemonstrasikan cara kerjanya, bayangkan sebuah restoran kecil yang memiliki 4 kursi per meja, dan total 5 meja, tiba-tiba menerima 22 tamu.
+
+Berapa banyak tamu yang tidak dapat duduk di restoran tersebut?
+
+Anda dapat menggunakan operator modulus untuk menyelesaikannya.
+
+1
+console.log(22 % 5); // 2
+Outputnya adalah2, artinya, ketika saya membagi22 dan5, saya mendapatkan4, dan sisanya adalah2, yang berarti, ada2 orang yang tidak dapat tempat di restoran ini.
+
+Operator kesetaraan,==
+Operator kesetaraan memeriksa apakah dua nilai sama.
+
+Sebagai contoh, perbandingan ini menghasilkan true: 5 == 5. Memang benar bahwa 5 sama dengan 5.
+
+Berikut adalah contoh operator kesetaraan yang menghasilkan false: 5 == 6. Memang benar bahwa 5 tidak sama dengan 6.
+
+Selain itu, meskipun salah satu nilai yang dibandingkan bertipe angka, dan yang lainnya bertipe string, nilai yang dikembalikan tetap true: 5 == "5". 
+
+Ini berarti bahwa operator kesetaraan hanya membandingkan nilai, tetapi tidak membandingkan tipe.
+
+Operator kesetaraan yang ketat,===
+Operator kesetaraan ketat membandingkan nilai dan tipe data.
+
+Dengan operator kesetaraan ketat, membandingkan 5 === 5 masih menghasilkan true. Nilai-nilai di setiap sisi operator kesetaraan ketat memiliki nilai yang sama dan tipe yang sama. Namun, membandingkan 5 == "5" sekarang menghasilkan false, karena nilainya sama, tetapi tipe datanya berbeda.
+
+Operator pertidaksamaan,!=
+Operator pertidaksamaan memeriksa apakah dua nilai tidak sama, tetapi tidak memeriksa perbedaan tipe.
+
+Sebagai contoh, 5 != "5" mengembalikan nilai salah, karena salah jika menyatakan bahwa angka 5 tidak sama dengan angka 5, meskipun angka lain ini bertipe data string.
+
+Operator pertidaksamaan yang ketat!==
+Agar operator pertidaksamaan ketat mengembalikan false, nilai yang dibandingkan harus memiliki nilai yang sama dan tipe data yang sama. 
+
+Sebagai contoh, 5 !== 5 mengembalikan false karena salah jika dikatakan bahwa angka 5 tidak memiliki nilai dan tipe data yang sama dengan angka 5 lainnya.
+
+Namun, membandingkan angka 5 dan string 5, dengan menggunakan operator pertidaksamaan yang ketat, akan menghasilkan true.
+
+1
+console.log(5 !== "5")
+
+2. Menggunakan operator+ pada string dan angka
+Menggabungkan dua string menggunakan operator+
+Operator+, ketika digunakan dengan tipe data angka, akan menambahkan nilai-nilai tersebut bersama-sama.
+
+Namun, operator+ juga digunakan untuk menggabungkan tipe data string.
+
+Sebagai contoh:
+
+12
+"inter" + "net" // "internet"
+"note" + "book" // "notebook"
+Jika operator+ digunakan untuk menggabungkan string, maka operator ini disebut sebagai operatorpenggabungan, dan Anda akan mengatakan bahwa operator ini digunakan untukmenggabungkan string.
+
+Ketika digunakan dengan angka, operator+ adalahoperator penjumlahan, dan ketika digunakan dengan string, operator+ adalahoperator penggabungan.
+
+Menggabungkan string dan angka menggunakan operator+
+Namun, apa yang terjadi jika seseorang menggabungkan string dan angka menggunakan operator+?
+
+Berikut ini adalah contohnya:
+
+123
+365 + " days" // "365 days"
+12 + " months" // "12 months"
+
+Di sini, JavaScript mencoba membantu dengan mengubah angka menjadi string, dan kemudianmenggabungkan angka dan string bersama-sama, berakhir dengannilai string.
+
+Proses konversi nilai "di balik layar" ini dalam JavaScript disebut sebagai "pemaksaan". JavaScriptmemaksa nilai angka menjadi nilai string - sehingga dapat menjalankan operator+ pada tipe data yang berbeda.
+
+Proses pemaksaan ini terkadang bisa sedikit tidak terduga.
+
+Perhatikan contoh berikut ini:
+
+1
+1 + "2"
+Apa yang akan menjadi hasil dari1 + "2"?
+
+Perhatikan bahwa nilai1 adalah tipe data angka, dan nilai"2" adalah tipe data string, sehingga JavaScript akan memaksa angka1 menjadi string"1", dan kemudian menggabungkannya dengan string"2", sehingga hasilnya adalah string"12".
+
+Operator penugasan penjumlahan,+=
+Operator penugasan penjumlahan digunakan ketika kita ingin mengakumulasikan nilai yang tersimpan di dalam sebuah variabel.
+
+Berikut ini sebuah contoh: Anda sedang menghitung jumlah jam lembur yang bekerja dalam seminggu.
+
+Anda tidak perlu menentukan jenis pekerjaannya, Anda hanya perlu menghitung total jam.
+
+Anda dapat membuat kode program untuk melacaknya, seperti ini:
+
+6
+var mon = 1;
+var tue = 2;
+var wed = 1;
+var thu = 2;
+var fri = 3;
+console.log(mon + tue + wed + thu + fri); // 9
+Anda dapat menyederhanakan kode di atas dengan menggunakan operator penugasan penjumlahan, sebagai berikut:
+
+123456
+var overtime = 1;
+overtime += 2;
+overtime += 1;
+overtime += 2;
+overtime += 3;
+console.log(overtime); // 9
+Menggunakan operator penugasan penjumlahan akan mengurangi baris kode Anda.
+
+Operator penugasan penggabungan,+=
+Sintaks operator ini sama persis dengan operator penugasan penambahan. Perbedaannya terletak pada tipe data yang digunakan:
+
+1234567
+var longString = "";
+longString += "Once";
+longString += " upon";
+longString += " a";
+longString += " time";
+longString += "...";
+console.log(longString); // "Once upon a time..."
+Prioritas operator dan asosiatifitas
+Operator precedence adalah seperangkat aturan yang menentukan operator mana yang harus dievaluasi terlebih dahulu.
+
+Perhatikan contoh berikut:
+
+1
+1 * 2 + 3
+Hasil dari kode di atas adalah 5, karena operator perkalian memiliki prioritas lebih tinggi daripada operator penjumlahan.
+
+Keterkaitan operator menentukan bagaimana prioritas bekerja ketika kode menggunakan operator dengan prioritas yang sama.
+
+Ada dua jenis: 
+
+keterkaitan dari kiri ke kanan
+
+keterkaitan dari kanan ke kiri
+
+Sebagai contoh, operator penugasan bersifat asosiatif kanan-ke-kiri, sedangkan operator lebih besar dari bersifat asosiatif kiri-ke-kanan:
+
+21
+var num = 10; // the value on the right is assigned to the variable name on the left
+5 > 4 > 3; // the 5 > 4 is evaluated first (to `true`), then true > 3 is evaluated to `false`, because the `true` value is coerced to `1`

@@ -1,0 +1,53 @@
+Foundation
+https://get.foundation/
+
+Foundation adalah kerangka kerja untuk membangun antarmuka pengguna yang mirip dengan Bootstrap. Framework ini digunakan oleh banyak perusahaan besar seperti Pixar, Polar, dan Sonos. Salah satu fitur yang menonjol dari Foundation adalah dapat digunakan untuk menata konten untuk dikirim melalui email.
+
+
+
+Pure.css
+https://purecss.io/
+
+Pure.css adalah pustaka lain untuk membangun antarmuka pengguna. Meskipun tidak memiliki banyak fitur seperti Bootstrap, namun dirancang untuk memiliki ukuran file yang minimal. Ukuran file yang lebih kecil meningkatkan waktu pemuatan halaman web karena ada lebih sedikit data yang harus ditransfer dari server web. Jika proyek Anda berikutnya difokuskan pada waktu pemuatan yang minimal, pustaka ini layak dipertimbangkan.
+
+
+
+
+Tailwind CSS
+https://tailwindcss.com/
+
+Tailwind CSS adalah kerangka kerja CSS yang menggunakan pendekatan berbasis utilitas untuk aturan CSS-nya. Ini berarti bahwa framework ini menyediakan banyak kelas CSS dengan satu tujuan. Sebagai contoh, kelas CSS pt-6 menetapkan properti CSS padding-top menjadi 6 piksel. Ini berarti bahwa Anda dapat menerapkan gaya dengan tepat pada HTML Anda tanpa menulis CSS. Keuntungan dari hal ini adalah lebih fleksibel untuk menyesuaikan desain halaman web Anda menggunakan framework. Namun, kerugiannya adalah jika beberapa pengembang mengerjakan sebuah proyek, hal ini dapat menyebabkan desain yang tidak konsisten jika tim tidak ketat dalam aturan desain.
+
+
+
+UIKit
+https://getuikit.com/
+
+UIKit adalah kerangka kerja CSS ringan yang menampilkan sekumpulan kecil komponen responsif. Desainnya yang sederhana memungkinkan pengembang untuk dengan mudah menyesuaikan aturan gaya dan visual.
+
+
+
+MVP.css
+https://andybrewer.github.io/mvp/
+
+MVP.css adalah pustaka CSS kecil yang secara otomatis menata elemen HTML tanpa perlu menerapkan kelas CSS padanya. Perpustakaan ini bertujuan untuk memungkinkan pengembang membuat prototipe antarmuka pengguna dengan cepat tanpa mengkhawatirkan desain akhir, namun tetap menarik secara visual. MVP berasal dari istilah teknis Minimal Viable Product, sebuah produk dengan fitur yang cukup untuk didemonstrasikan kepada pelanggan atau pemangku kepentingan bisnis lainnya.
+
+
+
+
+
+Situs web resmi Bootstrap
+
+https://getbootstrap.com/
+
+Fondasi Bootstrap 5 oleh Daniel Foreman  
+
+https://www.amazon.com/Bootstrap-Foundations-Mr-Daniel-Foreman/dp/B0948GRS8W/
+
+Desain Web Responsif dengan HTML5 dan CSS oleh Ben Frain  
+
+https://www.amazon.com/Responsive-Web-Design-HTML5-CSS/dp/1839211563/
+
+Tema Bootstrap  
+
+https://themes.getbootstrap.com/

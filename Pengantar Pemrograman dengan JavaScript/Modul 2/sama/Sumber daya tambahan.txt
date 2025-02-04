@@ -1,0 +1,26 @@
+Berikut ini adalah daftar sumber daya yang dapat membantu Anda dalam melanjutkan perjalanan belajar Anda.
+
+Fungsi MDN => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function
+
+MDN coba... tangkap
+Informasi:Item ini mencakup konten yang belum diterjemahkan ke bahasa pilihan Anda
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch
+
+Protokol iterasi
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch
+
+Objek Matematika pada MDN
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch
+
+Objek String pada MDN
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch
+
+Referensi kesalahan JavaScript MDN
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors
+
+Nilai null pada MDN
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors
+
+Properti yang tidak terdefinisi pada MDN
+Properti yang tidak te
+ 

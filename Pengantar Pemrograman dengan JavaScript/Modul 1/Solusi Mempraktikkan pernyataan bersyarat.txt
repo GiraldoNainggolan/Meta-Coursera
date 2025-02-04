@@ -1,0 +1,136 @@
+Solusi untuk tugas - Apakah Anda sudah cukup umur?
+Langkah 1: 
+
+Deklarasikan variabel usia menggunakan kata kunci var dan atur ke angka 10.
+
+12
+var age = 10;
+
+Atur ulang
+Langkah 2: 
+
+Tambahkan pernyataan "if" yang memeriksa apakah nilai variabel usia lebih besar atau sama dengan angka 65. Di dalam blok if, ketik "console.log" dan "Anda mendapatkan penghasilan dari uang pensiun".
+
+12345
+var age = 10;
+if (age >= 65) {
+   console.log('You get your income from your pension')
+}
+
+Atur ulang
+Langkah 3: 
+
+Tambahkan "else", diikuti dengan "if", di mana Anda akan memeriksa apakah nilai usia kurang dari 65 dan lebih besar dari atau sama dengan 18. Di dalam blok if ini, ketik "console.log" dan "Setiap bulan Anda mendapatkan gaji".
+
+1234567
+var age = 10;
+if (age >= 65) {
+   console.log('You get your income from your pension')
+} else if (age < 65 && age >= 18) {
+   console.log('Each month you get a salary')
+}
+
+Atur ulang
+Langkah 4: 
+
+Tambahkan satu lagi "else if", dan kali ini periksa apakah nilai usia di bawah 18 tahun. Di dalam blok if, ketik "console.log" dan "Kamu mendapatkan uang saku".
+
+123456789
+var age = 10;
+if (age >= 65) {
+   console.log('You get your income from your pension')
+} else if (age < 65 && age >= 18) {
+   console.log('Each month you get a salary')
+} else if (age < 18) {
+   console.log('You get an allowance')
+}
+
+Atur ulang
+Langkah 5: 
+
+Tambahkan pernyataan "else" untuk menangkap nilai lainnya. Di dalam blok tersebut, ketik "console.log" dan "Nilai dari variabel usia tidak berupa angka".
+
+
+var age = 10;
+if (age >= 65) {
+   console.log('You get your income from your pension')
+} else if (age < 65 && age >= 18) {
+   console.log('Each month you get a salary')
+} else if (age < 18) {
+   console.log('You get an allowance')
+} else {
+   //this block will run if no condition matches
+   console.log('The value of the age variable is not numerical')
+
+Atur ulang
+
+Solusi untuk program Hari dalam Seminggu 
+Langkah 1: 
+
+Pada baris berikutnya, tentukan variabel baru, beri nama hari, dan atur nilainya menjadi hari Minggu.
+
+12
+var day = 'Sunday';
+
+Atur ulang
+Langkah 2: 
+
+Mulai koding pernyataan sakelar, dengan mengoper variabel hari sebagai ekspresi yang akan dievaluasi.
+
+12345
+var day = 'Sunday';
+switch(day) {
+//add your conditions
+}
+
+Atur ulang
+Langkah 3: 
+
+Di dalam switch, tambahkan kasus untuk semua hari dalam seminggu, dimulai dengan 'Senin', dan diakhiri dengan 'Minggu'. Pastikan untuk menggunakan nilai string untuk hari. Di dalam setiap kasus, untuk saat ini, cukup tambahkan console.log('Lakukan sesuatu'), dan tambahkan break; pada baris di bawah ini.
+
+
+var day = 'Sunday';
+switch(day) {
+   case 'Monday':
+       console.log('Do something');
+       break;
+   case 'Tuesday':
+       console.log('Do something');
+       break;
+   case 'Wednesday':
+       console.log('Do something');
+
+Atur ulang
+Langkah 4: 
+
+Pada bagian paling bawah dari pernyataan sakelar, tambahkan kasus default dan tambahkan "console.log"('Tidak ada hari seperti itu').
+
+
+var day = 'Sunday';
+switch(day) {
+   case 'Monday':
+       console.log('Do something');
+       break;
+   case 'Tuesday':
+       console.log('Do something');
+       break;
+   case 'Wednesday':
+       console.log('Do something');
+
+Atur ulang
+Langkah 5: 
+
+Terakhir, perbarui panggilan console.log untuk setiap kasus, berdasarkan aktivitas apa pun yang Anda miliki pada setiap hari.
+
+
+var day = 'Sunday';
+switch(day) {
+   case 'Monday':
+       console.log('Read a book');
+       break;
+   case 'Tuesday':
+       console.log('Watch a movie');
+       break;
+   case 'Wednesday':
+       console.log('Read a book');
+

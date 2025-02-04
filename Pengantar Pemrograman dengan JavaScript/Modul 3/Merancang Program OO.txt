@@ -1,0 +1,174 @@
+Dalam bacaan ini, saya akan menunjukkan kepada Anda cara membuat kelas di JavaScript, menggunakan semua konsep yang telah Anda pelajari sejauh ini.
+
+Secara khusus, saya sedang mempersiapkan untuk membangun hirarki pewarisan berikut ini:
+
+                  Hewan
+                   / \
+               Burung Kucing
+          / \ \
+    Burung Beo Harimau Kucing Rumah
+
+Ada dua kata kunci yang sangat penting untuk OOP dengan kelas dalam JavaScript.
+
+Kata kunci tersebut adalahextends dansuper.
+
+Kata kunciextends memungkinkan saya untuk mewarisi dari kelas yang sudah ada.
+
+Berdasarkan hirarki di atas, saya dapat membuat kode kelasAnimal seperti ini:
+
+123
+class Animal {
+    // ... class code here ...
+}
+Kemudian saya dapat membuat kode, misalnya, sub-kelasCat, seperti ini:
+
+123
+class Cat extends Animal {
+    // ... class code here ...
+}
+Beginilah cara kata kunciextends digunakan untuk mengatur hubungan pewarisan.
+
+Kata kuncisuper memungkinkan saya untuk "meminjam" fungsionalitas dari kelas super, di dalam sub-kelas. Dinamika yang tepat dari cara kerja ini akan dibahas nanti dalam pelajaran ini.
+
+Sekarang saya dapat mulai berpikir tentang bagaimana mengimplementasikan hirarki kelas OOP saya.
+
+Bahkan sebelum saya mulai, saya perlu memikirkan hal-hal seperti: * Apa yang harus dimasukkan ke dalam kelas dasar dariAnimal? Dengan kata lain, apa yang akan diwarisi oleh semua sub-kelas dari kelas dasar? * Apa saja properti dan metode spesifik yang memisahkan setiap kelas dari kelas lainnya? * Secara umum, bagaimana kelas-kelas saya akan berhubungan satu sama lain?
+
+Setelah saya memikirkannya, saya dapat membangun kelas-kelas saya.
+
+Jadi, rencana saya adalah sebagai berikut: 
+
+1. Konstruktor kelasAnimal akan memiliki dua properti:color danenergy
+
+2. Prototipe kelasAnimal akan memiliki tiga metode:isActive(),sleep(), dangetColor(). 
+
+3. MetodeisActive(), setiap kali dijalankan, akan menurunkan nilaienergy hingga mencapai0. MetodeisActive() juga akan melaporkan nilai terbaru darienergy. Jikaenergy bernilai nol, objek hewan akan segera tidur, dengan memanggil metodesleep() berdasarkan kondisi tersebut. 
+
+4. MetodegetColor() hanya akan mencatat nilai di properticolor. 
+
+5. KelasCat akan mewarisi dariAnimal, dengan tambahan propertisound,canJumpHigh, dancanClimbTrees khusus untuk kelasCat. Kelas ini juga akan memiliki metodemakeSound() sendiri. 
+
+6. KelasBird juga akan mewarisi dariAnimal, tetapi properti spesifiknya sendiri akan sangat berbeda dariCat. Yaitu, kelasBird akan memiliki propertisound dancanFly, dan metodemakeSound juga. 
+
+7. KelasHouseCat akan memperluas kelasCat, dan akan memiliki propertihouseCatSound sebagai properti khusus. Selain itu, kelas ini akan menimpa metodemakeSound() dari kelasCat, tetapi dengan cara yang menarik. Jika metodemakeSound(), pada pemanggilan, menerima argumenoption tunggal - diatur ketrue, maka ia akan menjalankansuper.makeSound()- dengan kata lain, menjalankan kode dari kelas induk (Cat) dengan tambahan menjalankanconsole.log(this.houseCatSound). Secara efektif, ini berarti metodemakeSound() pada objek instance kelasHouseCat akan memiliki dua perilaku yang berbeda, berdasarkan apakah kita mengopernyatrue ataufalse. 
+
+8. KelasTiger juga akan mewarisi dariCat, dan akan dilengkapi dengan propertitigerSound, sementara perilaku lainnya akan hampir sama dengan kelasHouseCat. 
+
+9. Terakhir, kelasParrot akan memperluas kelasBird, dengan properticanTalk sendiri, dan metodemakeSound() sendiri, yang bekerja dengan dua kondisional: satu yang memeriksa apakah nilaitrue diteruskan kemakeSound selama pemanggilan, dan satu lagi yang memeriksa nilai yang tersimpan di dalam propertithis.canTalk.  
+
+Sekarang setelah saya menjelaskan secara lengkap bagaimana semua kode dalam hirarki kelas saya bekerja, saya dapat mulai mengimplementasikannya dengan menambahkan semua persyaratan sebagai komentar di dalam struktur kode.
+
+Pada tahap ini, dengan semua persyaratan yang dituliskan sebagai komentar, kode saya akan menjadi sebagai berikut:
+
+12345678910111213141516171819202122232425262728293031323334353637383940
+class Animal {
+    // constructor: color, energy
+    // isActive()
+        // if energy > 0, energy -=20, console log energy
+        // else if energy <= 0, sleep()
+    // sleep()
+        // energy += 20
+        // console.log energy
+}
+class Cat extends Animal {
+
+Sekarang setelah saya menuliskan persyaratan saya di dalam komentar dari kelas-kelas yang kosong, saya dapat mulai mengkodekan setiap kelas sesuai dengan spesifikasi saya.
+
+Pengkodean kelasAnimal
+Pertama, saya akan mengkodekan kelas dasarAnimal.
+
+123456789101112131415161718192021
+class Animal {
+    constructor(color = 'yellow', energy = 100) {
+        this.color = color;
+        this.energy = energy;
+    }
+    isActive() {
+        if(this.energy > 0) {
+            this.energy -= 20;
+            console.log('Energy is decreasing, currently at:', this.energy)
+        } else if(this.energy == 0){
+
+Setiap objek hewan, apa pun objeknya, akan berbagi properti daricolor danenergy.
+
+Sekarang saya dapat membuat kode untuk kelasCat danBird:
+
+12345678910111213141516171819202122
+class Cat extends Animal {
+    constructor(sound = 'purr', canJumpHigh = true, canClimbTrees = true, color, energy) {
+        super(color, energy);
+        this.sound = sound;
+        this.canClimbTrees = canClimbTrees;
+        this.canJumpHigh = canJumpHigh;
+    }
+    makeSound() {
+        console.log(this.sound);
+    }
+
+Catatan: Jika saya tidak menggunakan kata kuncisuper pada sub-kelas kita, saat saya menjalankan kode di atas, saya akan mendapatkan kesalahan berikut:Uncaught ReferenceError: Must call super constructor in derived class before accessing 'this' or returning from derived constructor.
+
+Dan sekarang saya dapat mengkodekan tiga kelas yang tersisa:HouseCat,Tiger, danParrot.
+
+12345678910111213141516171819202122232425262728293031323334353637383940
+class HouseCat extends Cat {
+    constructor(houseCatSound = "meow", sound,canJumpHigh,canClimbTrees, color,energy) {
+        super(sound,canJumpHigh,canClimbTrees, color,energy);
+        this.houseCatSound = houseCatSound;
+    }
+    makeSound(option) {
+        if (option) {
+            super.makeSound();
+        }
+        console.log(this.houseCatSound);
+
+Sekarang setelah kita menyiapkan seluruh struktur pewarisan ini, kita dapat membuat berbagai objek hewan.
+
+Sebagai contoh, saya bisa membuat dua burung beo: satu yang bisa berbicara, dan yang lainnya tidak.
+
+12345678910111213141516171819
+var polly = new Parrot(true); // we're passing `true` to the constructor so that polly can talk
+var fiji = new Parrot(false); // we're passing `false` to the constructor so that fiji can't talk
+
+polly.makeSound(); // 'chirp', 'I'm a talking parrot!'
+fiji.makeSound(); // 'chirp'
+
+polly.color; // yellow
+polly.energy; // 100
+
+polly.isActive(); // Energy is decreasing, currently at: 80
+
+Saya juga bisa membuat seekor kucing peliharaan:
+
+1
+var leo = new HouseCat();
+Sekarang saya dapat memilikileo dengkuran:  
+
+12345
+// leo, no purring please:
+leo.makeSound(false); // meow
+
+// leo, both purr and meow now:
+leo.makeSound(true); // purr, meow
+Selain itu, saya dapat membuat seekor harimau:
+
+1
+var cuddles = new Tiger();
+Harimaucuddles saya dapat mendengkur dan mengaum, atau hanya mengaum:
+
+12
+cuddles.makeSound(false); // Roar!
+cuddels.makeSound(true); // purr, Roar!
+Berikut adalah kode lengkap dari pelajaran ini, untuk memudahkan penyalinan dan penempelan:
+
+12345678910111213141516171819202122232425262728293031323334353637383940
+class Animal {
+    constructor(color = 'yellow', energy = 100) {
+        this.color = color;
+        this.energy = energy;
+    }
+    isActive() {
+        if(this.energy > 0) {
+            this.energy -= 20;
+            console.log('Energy is decreasing, currently at:', this.energy)
+        } else if(this.energy == 0){
+

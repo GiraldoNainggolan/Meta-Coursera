@@ -1,0 +1,184 @@
+Dalam bacaan ini, Anda akan belajar tentang manfaat pemrograman berorientasi objek (OOP) dan prinsip-prinsip OOP.
+
+
+Manfaat OOP
+Ada banyak manfaat menggunakan paradigma pemrograman berorientasi objek (OOP).
+
+OOP membantu pengembang untuk meniru hubungan antar objek di dunia nyata. Di satu sisi, hal ini membantu Anda untuk berpikir tentang hubungan antara berbagai hal dalam perangkat lunak Anda, seperti yang Anda lakukan di dunia nyata. Dengan demikian, OOP adalah pendekatan yang efektif untuk menghasilkan solusi dalam kode yang Anda tulis. OOP juga:
+
+Memungkinkan Anda untuk menulis kode modular,
+
+Membuat kode Anda lebih fleksibel dan
+
+Membuat kode Anda dapat digunakan kembali.
+
+Prinsip-prinsip OOP
+Empat prinsip dasar OOP adalah pewarisan, enkapsulasi, abstraksi, dan polimorfisme. Anda akan belajar tentang masing-masing prinsip ini secara bergantian. Hal yang perlu diingat tentang Object adalah bahwa mereka ada dalam struktur hirarki. Artinya, dasar atau kelas super untuk segala sesuatu adalah kelas Object, semua objek berasal dari kelas ini. Hal ini memungkinkan kita untuk menggunakan metode Object.create(). untuk membuat atau menginstansiasi objek dari kelas kita.
+
+
+12345
+class Animal { /* ...class code here... */ }
+
+var myDog = Object.create(Animal)
+
+console.log (Animal)
+Atur ulang
+Metode yang lebih umum untuk membuat objek dari kelas adalah dengan menggunakan kata kunci new. Ketika menggunakan metode konstruktor default atau kosong, JavaScript secara implisit memanggil superkelas Object untuk membuat instance.
+
+12345
+class Animal { /* ...class code here... */ }
+
+var myDog = new Animal()
+
+console.log (Animal)
+Atur ulang
+Konsep ini akan dieksplorasi dalam bagian selanjutnya tentang pewarisan
+
+Prinsip-prinsip OOP: Pewarisan
+Pewarisan adalah salah satu dasar dari pemrograman berorientasi objek.
+
+Pada dasarnya, ini adalah konsep yang sangat sederhana. Cara kerjanya seperti ini: 
+
+Ada sebuah kelas dasar dari sebuah "benda".
+
+Ada satu atau lebih sub-kelas dari "sesuatu" yang mewarisi sifat-sifat dari kelas dasar (kadang-kadang juga disebut sebagai "kelas super")
+
+Mungkin ada beberapa sub-sub-kelas lain dari "benda" yang mewarisi dari kelas-kelas di poin 2.
+
+Perhatikan bahwa setiap sub-kelas mewarisi dari super-kelasnya. Pada gilirannya, sebuah sub-kelas mungkin juga merupakan super-kelas, jika ada kelas-kelas yang mewarisi dari sub-kelas tersebut.
+
+Semua ini mungkin terdengar sedikit "ilmu komputer", jadi inilah contoh yang lebih praktis:
+
+Ada sebuah kelas dasar "Hewan".
+
+Ada kelas lain, sub-kelas yang mewarisi dari "Hewan", dan nama kelas ini adalah "Burung".
+
+Selanjutnya, ada kelas lain, yang diwarisi dari "Burung", dan kelas ini adalah "Elang".
+
+Jadi, pada contoh di atas, saya memodelkan objek dari dunia nyata dengan membuat hubungan antara Hewan, Burung, dan Elang. Masing-masing dari mereka adalah kelas yang terpisah, yang berarti, masing-masing dari mereka adalah cetak biru yang terpisah untuk instance objek tertentu yang dapat dibangun sesuai kebutuhan.
+
+Untuk mengatur relasi pewarisan antar kelas di JavaScript, saya dapat menggunakan kata kunciextends, seperti padaclass B extends A.
+
+Berikut adalah contoh hirarki pewarisan dalam JavaScript:
+
+123
+class Animal { /* ...class code here... */ }
+class Bird extends Animal { /* ...class code here... */ }
+class Eagle extends Bird { /* ...class code here... */ }
+Prinsip-prinsip OOP: Enkapsulasi
+Dalam istilah yang paling sederhana, enkapsulasi berkaitan dengan membuat implementasi kode "tersembunyi" dari pengguna lain, dalam artian mereka tidak perlu mengetahui cara kerja kode saya untuk "mengkonsumsi" kode tersebut.
+
+Sebagai contoh, ketika saya menjalankan kode berikut ini:
+
+1
+"abc".toUpperCase();
+Saya tidak perlu khawatir atau bahkan membuang waktu untuk memikirkan bagaimana cara kerja metodetoUpperCase(). Yang saya inginkan hanyalah menggunakannya, karena saya tahu bahwa itu tersedia untuk saya. Bahkan jika sintaks yang mendasarinya - yaitu, implementasi metodetoUpperCase() berubah - selama itu tidak merusak kode saya, saya tidak perlu khawatir tentang apa yang dilakukannya di latar belakang, atau bahkan bagaimana cara melakukannya.
+
+Prinsip-prinsip OOP: Abstraksi
+Abstraksi adalah tentang menulis kode dengan cara yang akan membuatnya lebih umum.
+
+Konsep enkapsulasi dan abstraksi sering disalahpahami karena perbedaannya bisa terasa kabur.
+
+Ada baiknya kita memikirkannya dalam istilah-istilah berikut ini: 
+
+Abstraksi adalah tentang mengekstraksikonsep dari apa yang ingin Anda lakukan, daripada berurusan dengan manifestasi spesifik dari konsep tersebut. 
+
+Enkapsulasi adalah tentang Anda tidak memiliki akses ke, atau tidak peduli dengan, bagaimana beberapa implementasi bekerja secara internal.
+
+Meskipun enkapsulasi dan abstraksi adalah konsep penting dalam OOP, dibutuhkan lebih banyak pengalaman dengan pemrograman secara umum untuk benar-benar mempelajari topik ini.
+
+Untuk saat ini, cukup dengan menyadari keberadaan mereka dalam OOP.
+
+Prinsip-prinsip OOP: Polimorfisme
+Polimorfisme adalah sebuah kata yang berasal dari bahasa Yunani yang berarti "bentuk ganda". Terjemahan alternatifnya adalah: "sesuatu yang dapat memiliki banyak bentuk".
+
+Jadi, untuk memahami apa yang dimaksud dengan polimorfisme, mari kita lihat beberapa objek dalam kehidupan nyata.
+
+Sebuah pintu memiliki bel. Bisa dikatakan bahwa bel adalah properti dari objek pintu. Lonceng ini dapat dibunyikan. Kapan seseorang membunyikan bel di pintu? Jelas, untuk membuat seseorang muncul di depan pintu.
+
+Sekarang perhatikan bel pada sepeda. Sebuah sepeda memiliki bel. Bisa dikatakan bahwa bel adalah properti dari objek sepeda. Lonceng ini juga bisa dibunyikan. Namun, alasan, tujuan, dan hasil dari seseorang membunyikan bel pada sepeda tidak sama dengan membunyikan bel pada pintu.
+
+Konsep di atas dapat dikodekan dalam JavaScript sebagai berikut:
+
+10
+const bicycle = {
+    bell: function() {
+        return "Ring, ring! Watch out, please!"
+    }
+}
+const door = {
+    bell: function() {
+        return "Ring, ring! Come here, please!"
+    }
+}
+Jadi, saya dapat mengakses metodebell() pada objekbicycle, dengan menggunakan sintaks berikut:  
+
+1
+bicycle.bell(); // "Get away, please"
+Saya juga dapat mengakses metodebell() pada objekdoor, dengan menggunakan sintaks berikut:  
+
+1
+door.bell(); // "Come here, please"
+Pada titik ini, kita dapat menyimpulkan bahwa nama metode yang sama persis dapat memiliki maksud yang berlawanan, berdasarkan pada objek apa metode tersebut digunakan.
+
+Sekarang, untuk membuat kode ini benar-benar polimorfik, saya akan menambahkan deklarasi fungsi lain:
+
+123
+function ringTheBell(thing) {
+    console.log(thing.bell())
+}
+Sekarang saya telah mendeklarasikan fungsiringTheBell(). Fungsi ini menerima parameterthing- yang saya harapkan adalah sebuah objek, yaitu objekbicycle atau objekdoor.
+
+Jadi sekarang, jika saya memanggil fungsiringTheBell() dan memberikanbicycle sebagai argumen tunggal, inilah hasilnya:
+
+1
+ringTheBell(bicycle); // Ring, ring! Watch out, please!
+Namun, jika saya memanggil fungsiringTheBell() dan mengoper objekdoor, saya akan mendapatkan keluaran sebagai berikut: 
+
+1
+ringTheBell(door); // "Ring, ring! Come here, please!"
+Anda sekarang telah melihat contoh fungsi yang sama persis menghasilkan hasil yang berbeda,berdasarkan konteks penggunaannya.
+
+Berikut ini contoh lain, operator penggabungan, yang digunakan dengan memanggil metodeconcat() bawaan.
+
+Jika saya menggunakan metodeconcat() pada dua buah string, maka perilakunya akan sama persis seperti jika saya menggunakan operator+. 
+
+1
+"abc".concat("def"); // 'abcdef'
+Saya juga dapat menggunakan metodeconcat() pada dua array. Inilah hasilnya: 
+
+1
+["abc"].concat(["def"]); // ['abc', 'def']
+Pertimbangkan untuk menggunakan operator+ pada dua larik dengan masing-masing satu anggota:  
+
+12
+["abc"] + ["def"]; // ["abcdef"]
+
+Ini berarti metodeconcat() menunjukkan perilaku polimorfik karena berperilaku berbeda berdasarkan konteks - dalam hal ini, berdasarkan tipe data yang saya berikan.
+
+Untuk mengulangi, polimorfisme berguna karena memungkinkan pengembang untuk membuat objek yang dapat memiliki fungsi yang sama persis, yaitu, fungsi dengan nama yang sama persis, yang berperilaku sama persis. Namun, pada saat yang sama, Anda dapat menimpa beberapa bagian dari fungsionalitas yang digunakan bersama atau bahkan fungsionalitas yang lengkap, di beberapa bagian lain dari struktur OOP.
+
+Berikut adalah contoh polimorfisme menggunakan kelas dalam JavaScript:
+
+123456789101112131415161718192021
+class Bird {
+    useWings() {
+        console.log("Flying!")
+    }
+}
+class Eagle extends Bird {
+    useWings() {
+        super.useWings()
+        console.log("Barely flapping!")
+    }
+
+Sub-kelasPenguin danEagle keduanya mewarisi dari super-kelasBird. Sub-kelasEagle mewarisi metodeuseWings() dari kelasBird, tetapi memperluasnya dengan log konsol tambahan. Sub-kelasPenguin tidak mewarisi kelasuseWings()- sebagai gantinya, sub-kelas ini memiliki implementasinya sendiri, meskipun kelasPenguin sendiri memperluas kelasBird.  
+
+
+  Lakukan latihan dengan kode di atas, cobalah membuat beberapa kelas Anda sendiri.  (petunjuk: pikirkan hal-hal yang Anda ketahui dari kehidupan sehari-hari)
+
+1
+// create your classes here
+Atur ulang
+
+

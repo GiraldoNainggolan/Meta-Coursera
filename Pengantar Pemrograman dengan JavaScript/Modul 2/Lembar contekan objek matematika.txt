@@ -1,0 +1,42 @@
+JavaScript memiliki objek bawaan yang praktis. Salah satu objek bawaan yang populer adalah objek Matematika.
+
+Pada akhir bacaan ini, Anda akan dapat:
+
+Menguraikan properti dan metode bawaan dari objek Matematika
+
+Konstanta bilangan
+Berikut adalah beberapa konstanta bilangan bawaan yang ada pada objek Math: 
+
+Angka PI:Math.PI yang kira-kira sebesar 3.14159
+
+Konstanta Euler:Math.E yang kira-kira 2,718
+
+Logaritma natural dari 2:Math.LN2 yaitu sekitar 0.693
+
+Metode pembulatan
+Ini termasuk: 
+
+Math.ceil()- membulatkan ke atas ke bilangan bulat terdekat 
+
+Math.floor()- membulatkan ke bawah ke bilangan bulat terdekat 
+
+Math.round()- membulatkan ke atas ke bilangan bulat terdekat jika desimalnya adalah.5 atau lebih tinggi; jika tidak, membulatkan ke bawah ke bilangan bulat terdekat 
+
+Math.trunc()- memangkas desimal, dan hanya menyisakan bilangan bulatnya saja
+
+Metode aritmatika dan kalkulus
+Berikut ini adalah daftar non-konklusif dari beberapa metode aritmatika dan kalkulus umum yang ada pada objekMath: 
+
+Math.pow(2,3)- menghitung angka2 dengan pangkat3, hasilnya adalah8
+
+Math.sqrt(16)- menghitung akar kuadrat dari16, hasilnya adalah4
+
+Math.cbrt(8)- mencari akar pangkat tiga dari8, hasilnya adalah2
+
+Math.abs(-10)- mengembalikan nilai absolut, hasilnya adalah10
+
+Metode logaritma:Math.log(),Math.log2(),Math.log10()
+
+Mengembalikan nilai minimum dan maksimum dari semua input:Math.min(9,8,7) mengembalikan7,Math.max(9,8,7) mengembalikan9.
+
+ Metode trigonometri:Math.sin(),Math.cos(),Math.tan(), dll.
